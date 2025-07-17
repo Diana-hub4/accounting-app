@@ -2,7 +2,7 @@
   <!-- Left Panel -->
   <div class="register-left">
     <div class="logo">
-      <img src="assets/images/logo.svg" alt="ConIA Logo" />
+      <img src="/src/assets/images/LOGO CONIA.png" alt="ConIA Logo" />
       <h1>CONIA</h1>
     </div>
     <p>
@@ -14,12 +14,40 @@
   <div class="register-right">
     <h2>REGISTER</h2>
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-      <div *ngFor="let field of fields" class="form-group">
-        <input
-          [type]="field.type"
-          [placeholder]="field.placeholder"
-          formControlName="{{field.name}}"
-        />
+
+      <div class="form-group">
+        <div class="input-icon">
+          <img src="/src/assets/images/NAME ICON.png" alt="Name" />
+          <input type="text" placeholder="Name" formControlName="name" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-icon">
+          <img src="/src/assets/images/LASTNAME ICON.png" alt="Lastname" />
+          <input type="text" placeholder="Lastname" formControlName="lastname" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-icon">
+          <img src="/src/assets/images/MAIL ICON.png" alt="Email" />
+          <input type="email" placeholder="Email" formControlName="email" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-icon">
+          <img src="/src/assets/images/PASSWORD ICON.png" alt="Password" />
+          <input type="password" placeholder="Password" formControlName="password" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-icon">
+          <img src="/src/assets/images/CONFIRM PASSWORD ICON.png" alt="Confirm Password" />
+          <input type="password" placeholder="Confirm Password" formControlName="confirmPassword" />
+        </div>
       </div>
 
       <div class="form-check">

@@ -14,12 +14,13 @@ export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
 
   fields = [
-    { name: 'name', placeholder: 'Name', type: 'text' },
-    { name: 'lastname', placeholder: 'Lastname', type: 'text' },
-    { name: 'email', placeholder: 'Email', type: 'email' },
-    { name: 'password', placeholder: 'Password', type: 'password' },
-    { name: 'confirmPassword', placeholder: 'Confirm Password', type: 'password' },
+    { name: 'name', placeholder: 'Name', type: 'text', icon: 'assets/images/NAME ICON.png' },
+    { name: 'lastname', placeholder: 'Lastname', type: 'text', icon: 'assets/images/LASTNAME ICON.png' },
+    { name: 'email', placeholder: 'Email', type: 'email', icon: 'assets/images/MAIL ICON.png' },
+    { name: 'password', placeholder: 'Password', type: 'password', icon: 'assets/images/PASSWORD ICON.png' },
+    { name: 'confirmPassword', placeholder: 'Confirm Password', type: 'password', icon: 'assets/images/CONFIRM PASSWORD ICON.png' },
   ];
+
 
   constructor(private fb: FormBuilder) {}
 
