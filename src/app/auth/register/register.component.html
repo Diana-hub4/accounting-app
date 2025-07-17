@@ -1,0 +1,43 @@
+<div class="register-container">
+  <!-- Left Panel -->
+  <div class="register-left">
+    <div class="logo">
+      <img src="assets/images/logo.svg" alt="ConIA Logo" />
+      <h1>CONIA</h1>
+    </div>
+    <p>
+      Optimize your accounting management with ConIA, transform accounting data into strategic decisions, all from one place, without losing control.
+    </p>
+  </div>
+
+  <!-- Right Panel -->
+  <div class="register-right">
+    <h2>REGISTER</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div *ngFor="let field of fields" class="form-group">
+        <input
+          [type]="field.type"
+          [placeholder]="field.placeholder"
+          formControlName="{{field.name}}"
+        />
+      </div>
+
+      <div class="form-check">
+        <input type="checkbox" id="remember" />
+        <label for="remember">Remember me</label>
+      </div>
+
+      <button type="submit" class="btn-register">REGISTER</button>
+    </form>
+
+    <div class="login-link">
+      Already have an account? <a routerLink="/login">Login</a>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span>Privacy Policy</span>
+  <span>2025 Technological Solutions</span>
+  <span>Terms & Conditions</span>
+</div>
