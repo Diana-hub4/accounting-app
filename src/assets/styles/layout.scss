@@ -1,0 +1,15 @@
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-height {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-md;
+}

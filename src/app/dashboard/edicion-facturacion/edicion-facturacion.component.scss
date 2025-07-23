@@ -1,0 +1,73 @@
+.edicion-facturacion {
+  padding: 2rem;
+  margin-left: 80px;
+
+  h1 {
+    color: #064e3b;
+    margin-bottom: 1.5rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .form-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      label {
+        font-weight: bold;
+        width: 150px;
+      }
+
+      input, textarea {
+        flex: 1;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .editar-btn, .add-item {
+        background: #064e3b;
+        color: white;
+        border: none;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    }
+
+    .totales {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .acciones {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+
+      .guardar {
+        background: #064e3b;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .restablecer, .cancelar {
+        background: transparent;
+        border: 1px solid #064e3b;
+        color: #064e3b;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    }
+  }
+}

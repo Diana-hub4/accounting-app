@@ -1,71 +1,71 @@
 <div class="register-container">
-  <!-- Left Panel -->
+  <!-- Panel Izquierdo -->
   <div class="register-left">
     <div class="logo">
-      <img src="/src/assets/images/LOGO CONIA.png" alt="ConIA Logo" />
+      <img src="/src/assets/images/LOGO CONIA.png" alt="Logo de ConIA" />
       <h1>CONIA</h1>
     </div>
     <p>
-      Optimize your accounting management with ConIA, transform accounting data into strategic decisions, all from one place, without losing control.
+      Optimiza la gestión contable con ConIA, transforma los datos contables en decisiones estratégicas, todo desde un solo lugar y sin perder el control.
     </p>
   </div>
 
-  <!-- Right Panel -->
+  <!-- Panel Derecho -->
   <div class="register-right">
-    <h2>REGISTER</h2>
+    <h2>REGISTRARSE</h2>
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
       <div class="form-group">
         <div class="input-icon">
-          <img src="/src/assets/images/NAME ICON.png" alt="Name" />
-          <input type="text" placeholder="Name" formControlName="name" />
+          <img src="/src/assets/images/NAME ICON.png" alt="Nombre" />
+          <input type="text" placeholder="Nombre" formControlName="name" />
         </div>
       </div>
 
       <div class="form-group">
         <div class="input-icon">
-          <img src="/src/assets/images/LASTNAME ICON.png" alt="Lastname" />
-          <input type="text" placeholder="Lastname" formControlName="lastname" />
+          <img src="/src/assets/images/LASTNAME ICON.png" alt="Apellido" />
+          <input type="text" placeholder="Apellido" formControlName="lastname" />
         </div>
       </div>
 
       <div class="form-group">
         <div class="input-icon">
-          <img src="/src/assets/images/MAIL ICON.png" alt="Email" />
-          <input type="email" placeholder="Email" formControlName="email" />
+          <img src="/src/assets/images/MAIL ICON.png" alt="Correo electrónico" />
+          <input type="email" placeholder="Correo electrónico" formControlName="email" />
         </div>
       </div>
 
       <div class="form-group">
         <div class="input-icon">
-          <img src="/src/assets/images/PASSWORD ICON.png" alt="Password" />
-          <input type="password" placeholder="Password" formControlName="password" />
+          <img src="/src/assets/images/PASSWORD ICON.png" alt="Contraseña" />
+          <input type="password" placeholder="Contraseña" formControlName="password" />
         </div>
       </div>
 
       <div class="form-group">
         <div class="input-icon">
-          <img src="/src/assets/images/CONFIRM PASSWORD ICON.png" alt="Confirm Password" />
-          <input type="password" placeholder="Confirm Password" formControlName="confirmPassword" />
+          <img src="/src/assets/images/CONFIRM PASSWORD ICON.png" alt="Confirmar contraseña" />
+          <input type="password" placeholder="Confirmar contraseña" formControlName="confirmPassword" />
         </div>
       </div>
 
       <div class="form-check">
         <input type="checkbox" id="remember" />
-        <label for="remember">Remember me</label>
+        <label for="remember">Recuérdame</label>
       </div>
 
-      <button type="submit" class="btn-register">REGISTER</button>
+      <button type="submit" class="btn-register">REGISTRARSE</button>
     </form>
 
     <div class="login-link">
-      Already have an account? <a routerLink="/login">Login</a>
+      ¿Ya tienes una cuenta? <a routerLink="/login">Iniciar sesión</a>
     </div>
   </div>
 </div>
 
 <div class="footer">
-  <span>Privacy Policy</span>
-  <span>2025 Technological Solutions</span>
-  <span>Terms & Conditions</span>
+  <span>Política de privacidad</span>
+  <span>2025 Soluciones Tecnológicas</span>
+  <span>Términos y condiciones</span>
 </div>

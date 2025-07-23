@@ -1,0 +1,41 @@
+.btn-primary {
+  background: $green-medium;
+  color: $text-light;
+  padding: $spacing-sm $spacing-lg;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+
+  &:hover {
+    background: lighten($green-medium, 10%);
+  }
+}
+
+.input-standard {
+  width: 100%;
+  padding-left: 40px;
+  padding-right: 10px;
+  height: 2.5rem;
+  border: 1px solid $green-medium;
+  border-radius: $border-radius;
+  font-size: $font-size-base;
+}
+
+.input-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+  }
+
+  input {
+    @extend .input-standard;
+  }
+}
