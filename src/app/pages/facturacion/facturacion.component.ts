@@ -1,17 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-
+import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-facturacion',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './facturacion.component.html',
   styleUrls: ['./facturacion.component.scss']
 })
 
 export class FacturacionComponent {
     mostrarInput = false;
-    procesando = false;
+    procesando = false; 
     procesado = false;
     
     facturas = [
@@ -21,6 +21,8 @@ export class FacturacionComponent {
       { id: '# 1004', fecha: '03/04/2025', cliente: 'Norman Reedus', estado: 'Denegado', precio: '$100.20 GBP', observaciones: 'Calidad Baja' },
       { id: '# 1005', fecha: '04/07/2025', cliente: 'Danai Gurira', estado: 'Pendiente', precio: '$40.50 EUR', observaciones: 'Estructura no reconocida' }
     ];
+
+  constructor (private router: Router) {}
 
   mostrarCarga() {
     this.mostrarInput = true;
@@ -34,5 +36,9 @@ export class FacturacionComponent {
       this.procesando = false;
       this.mostrarInput = false;
     }, 2000);
+  }
+
+  volverLogin() {
+    this.router.navigate(['/login']);
   }
 }

@@ -1,0 +1,267 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.carga-flotante {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.mensaje-flotante {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #064e3b;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 11;
+}
+
+.facturacion {
+  padding: 2rem;
+  margin-left: 70px;
+  min-height: calc(100vh - 80px);
+  position: relative;
+
+  h1 {
+    color: #064e3b;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+    color: #064e3b;
+  }
+
+  .acciones {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    position: relative;
+
+    .grupo-cargar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn {
+      display: inline-flex;         
+      align-items: center;       
+      justify-content: center;     
+      gap: 0.5rem;                
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      width: auto;            
+      background: #064e3b;    
+
+      img {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;       
+      }
+
+      span {
+        white-space: nowrap;   
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    margin-top: 1 rem;
+    border: 1px solid #ddd;
+
+    thead {
+      background: #064e3b;
+      color: #fff;
+      position: sticky;
+      top: 0;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2; 
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: #ffffff; 
+    }
+    
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+      border-right: 1px solid #eee;
+    }
+
+    .denegado {
+      color: red;
+      font-weight: bold;
+    }
+
+    .pendiente {
+      color: blue;
+      font-weight: bold;
+    }
+
+    .editar {
+      background: #064e3b;
+      color: #fff;
+      border: none;
+      padding: 0.25rem 0.75rem;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  }
+}
+
+.lateral-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px; 
+  height: 100vh;
+  background: linear-gradient(to bottom, #064e3b, #5e6f65);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  gap: 2rem;
+  z-index: 100;
+
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.5rem;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:first-child {
+      margin-top: 3.9rem; 
+    }
+  }
+}
+
+.lateral-menu button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.lateral-menu button:hover {
+  opacity: 0.8;
+}
+
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+
+  .facturacion {
+    flex: 1;
+  }
+
+  .footer {
+    background: #ffffff;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+    color: #555;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+
+    span {
+      flex: 1;
+      text-align: center;
+    }
+
+    .footer-left {
+      text-align: left;
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+  }
+}
+
+.formatos-admitidos {
+  font-size: 0.85rem;
+  color: #064e3b;
+  margin-top: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.paginacion {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+
+  button {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+
+  .activo {
+    background: #064e3b;
+    color: white;
+    border-color: #064e3b;
+  }
+
+  span {
+    color: #666;
+  }
+}

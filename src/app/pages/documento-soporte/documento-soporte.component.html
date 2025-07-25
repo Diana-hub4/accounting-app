@@ -1,0 +1,91 @@
+<div class="layout-wrapper">
+  <!-- Menu lateral -->
+  <div class="lateral-menu">
+    <button title="Salir" (click)="volverLogin()">
+      <img src="/src/assets/images/LOGOUT ICON.png" alt="Salir" />
+    </button>
+    <button title="Documentos">
+      <img src="/src/assets/images/LINBOX ICON.png" alt="Documentos" />
+    </button>
+    <button title="Facturas">
+      <img src="/src/assets/images/FILE TEXT ICON.png" alt="Facturas" />
+    </button>
+  </div>
+
+  <!-- Contenido Principal -->
+  <main class="facturacion">
+    <header>
+      <h1>DOCUMENTO SOPORTE</h1>
+      <p>
+        Aquí puedes registrar documentos soporte de operaciones con no obligados a facturar,
+        asegurando trazabilidad, validación estructurada y respaldo legal ante la DIAN.
+      </p>
+    </header>
+
+    <div class="acciones">
+      <button class="btn cargar">
+        <img src="/src/assets/images/UPLOAD ICON.png" alt="Subir" />
+        CARGAR DOCUMENTOS
+      </button>
+
+    <p class="formatos-admitidos">Aceptamos PDF, XML, JPG, PNG, DOCX</p>
+
+    <div class="carga-flotante" *ngIf="mostrarInput">
+      <input type="file" (change)="procesarArchivo()" />
+    </div>
+
+    <div class="mensaje-flotante" *ngIf="procesando">
+      <span *ngIf="!procesado"> procesando archivo...</span>
+      <span *ngIf="procesado">✔️ Archivo procesado correctamente</span>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Documento</th>
+          <th>Fecha</th>
+          <th>Proveedor</th>
+          <th>Estado</th>
+          <th>Precio</th>
+          <th>Observaciones</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let factura of facturas">
+          <td>{{ doc.id }}</td>
+          <td>{{ doc.fecha }}</td>
+          <td>{{ doc.proveedor }}</td>
+          <td [ngClass]="{
+                'denegado': doc.estado === 'Rechazado',
+                'pendiente': doc.estado === 'En Proceso'
+              }">
+            {{ doc.estado }}
+          </td>
+          <td>{{ doc.precio }}</td>
+          <td>{{ doc.observaciones }}</td>
+          <td>
+            <button class="editar" [routerLink]="['/dashboard/facturacion/editar', factura.id]">
+              Editar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <div class="paginacion">
+    <button>&laquo; Anterior</button>
+    <button class="activo">1</button>
+    <button>2</button>
+    <span>...</span>
+    <button>6</button>
+    <button>Siguiente &raquo;</button>
+  </div>
+
+  <footer class="footer">
+    <span>Política de privacidad</span>
+    <span>2025 Soluciones Tecnológicas</span>
+    <span>Términos y condiciones</span>
+  </footer>
+</div>

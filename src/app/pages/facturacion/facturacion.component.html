@@ -1,0 +1,98 @@
+<div class="layout-wrapper">
+  <!-- Menu lateral -->
+  <div class="lateral-menu">
+    <button title="Salir" (click)="volverLogin()">
+      <img src="/src/assets/images/LOGOUT ICON.png" alt="Salir" />
+    </button>
+    <button title="Documentos">
+      <img src="/src/assets/images/LINBOX ICON.png" alt="Documentos" />
+    </button>
+    <button title="Facturas">
+      <img src="/src/assets/images/FILE TEXT ICON.png" alt="Facturas" />
+    </button>
+  </div>
+
+  <!-- Contenido Principal -->
+  <main class="facturacion">
+    <header>
+      <h1>FACTURACIÓN</h1>
+      <p>
+        Carga, procesa y gestiona facturas electrónicas de manera automática y segura,
+        garantizando el cumplimiento tributario y optimizando el flujo contable.
+      </p>
+    </header>
+
+  <div class="acciones">
+    <div class="grupo-cargar">
+      <button class="btn cargar">
+        <img src="/src/assets/images/UPLOAD ICON.png" alt="Cargar">
+        <span>Cargar Documentos</span>
+      </button>
+      <p class="formatos-admitidos">Aceptamos PDF, XML, JPG, PNG, DOCX</p>
+    </div>
+
+    <button class="btn generar">
+      <img src="/src/assets/images/FILE TEXT ICON.png" alt="Generar">
+      <span>Generar Facturas</span>
+    </button>
+  </div>
+
+    <div class="carga-flotante" *ngIf="mostrarInput">
+      <input type="file" (change)="procesarArchivo()" />
+    </div>
+
+    <div class="mensaje-flotante" *ngIf="procesando">
+      <span *ngIf="!procesado"> procesando archivo...</span>
+      <span *ngIf="procesado">✔️ Archivo procesado correctamente</span>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Factura</th>
+          <th>Fecha</th>
+          <th>Cliente</th>
+          <th>Estado</th>
+          <th>Precio</th>
+          <th>Observaciones</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let factura of facturas">
+          <td>{{ factura.id }}</td>
+          <td>{{ factura.fecha }}</td>
+          <td>{{ factura.cliente }}</td>
+          <td [ngClass]="{
+                'denegado': factura.estado === 'Denegado',
+                'pendiente': factura.estado === 'Pendiente'
+              }">
+            {{ factura.estado }}
+          </td>
+          <td>{{ factura.precio }}</td>
+          <td>{{ factura.observaciones }}</td>
+          <td>
+            <button class="editar" [routerLink]="['/dashboard/facturacion/editar', factura.id]">
+              Editar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <div class="paginacion">
+    <button>&laquo; Anterior</button>
+    <button class="activo">1</button>
+    <button>2</button>
+    <span>...</span>
+    <button>6</button>
+    <button>Siguiente &raquo;</button>
+  </div>
+
+  <footer class="footer">
+    <span>Política de privacidad</span>
+    <span>2025 Soluciones Tecnológicas</span>
+    <span>Términos y condiciones</span>
+  </footer>
+</div>
