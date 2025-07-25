@@ -13,7 +13,7 @@
   </div>
 
   <!-- Contenido Principal -->
-  <main class="facturacion">
+  <main class="documento-soporte">
     <header>
       <h1>DOCUMENTO SOPORTE</h1>
       <p>
@@ -23,21 +23,22 @@
     </header>
 
     <div class="acciones">
-      <button class="btn cargar">
+      <button class="btn cargar" (click)="mostrarCarga()">
         <img src="/src/assets/images/UPLOAD ICON.png" alt="Subir" />
         CARGAR DOCUMENTOS
       </button>
 
-    <p class="formatos-admitidos">Aceptamos PDF, XML, JPG, PNG, DOCX</p>
+      <p class="formatos-admitidos">Aceptamos PDF, XML, JPG, PNG, DOCX</p>
 
-    <div class="carga-flotante" *ngIf="mostrarInput">
-      <input type="file" (change)="procesarArchivo()" />
-    </div>
+      <div class="carga-flotante" *ngIf="mostrarInput">
+        <input type="file" (change)="procesarArchivo()" />
+      </div>
 
-    <div class="mensaje-flotante" *ngIf="procesando">
-      <span *ngIf="!procesado"> procesando archivo...</span>
-      <span *ngIf="procesado">✔️ Archivo procesado correctamente</span>
-    </div>
+      <div class="mensaje-flotante" *ngIf="procesando">
+        <span *ngIf="!procesado">procesando archivo...</span>
+        <span *ngIf="procesado">✔️ Archivo procesado correctamente</span>
+      </div>
+    </div> <!-- cierre de .acciones -->
 
     <table>
       <thead>
@@ -52,7 +53,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let factura of facturas">
+        <tr *ngFor="let doc of documentos">
           <td>{{ doc.id }}</td>
           <td>{{ doc.fecha }}</td>
           <td>{{ doc.proveedor }}</td>
@@ -65,7 +66,7 @@
           <td>{{ doc.precio }}</td>
           <td>{{ doc.observaciones }}</td>
           <td>
-            <button class="editar" [routerLink]="['/dashboard/facturacion/editar', factura.id]">
+            <button class="editar" [routerLink]="['/dashboard/documento-soporte/editar', doc.id]">
               Editar
             </button>
           </td>

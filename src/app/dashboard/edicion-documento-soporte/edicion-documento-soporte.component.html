@@ -1,0 +1,63 @@
+<div class="contenedor">
+  <h2>EDICIÓN DE DOCUMENTOS SOPORTES</h2>
+
+  <section class="emisor">
+    <label>Emisor</label>
+    <div class="editable">
+      <input [(ngModel)]="emisor.nombre" />
+      <button><img src="/src/assets/icons/edit.svg" alt="Editar" /></button>
+    </div>
+    <input [value]="emisor.nit" readonly />
+    <div class="editable">
+      <input [(ngModel)]="emisor.direccion" />
+      <button><img src="/src/assets/icons/edit.svg" alt="Editar" /></button>
+    </div>
+  </section>
+
+  <section class="receptor-fecha">
+    <div class="receptor">
+      <label>Señores</label>
+      <input [value]="receptor.nombre" readonly />
+      <input [value]="receptor.nit" readonly />
+      <input [value]="receptor.telefono" readonly />
+    </div>
+
+    <div class="fecha">
+      <label>Fecha de Emisión</label>
+      <input type="date" [(ngModel)]="fechaEmision" />
+
+      <label>Número de Comprobante</label>
+      <input [(ngModel)]="comprobante" />
+    </div>
+  </section>
+
+  <section class="productos">
+    <label>Detalle del Producto o Servicio</label>
+    <div class="tabla">
+      <div class="fila encabezado">
+        <div>Descripción</div>
+        <div>Cantidad</div>
+        <div>Total</div>
+      </div>
+      <div class="fila" *ngFor="let item of items">
+        <input [(ngModel)]="item.descripcion" />
+        <input type="number" [(ngModel)]="item.cantidad" />
+        <input type="text" [value]="item.total | currency:'COP':'symbol-narrow'" readonly />
+      </div>
+    </div>
+
+    <button class="add-item" (click)="añadirItem()">+ Añadir Item</button>
+  </section>
+
+  <section class="resumen">
+    <div>Subtotal: {{ subtotal | number:'1.0-0' }} COP</div>
+    <div>IVA: {{ iva | number:'1.0-0' }} COP</div>
+    <div class="total">Total: {{ total | number:'1.0-0' }} COP</div>
+  </section>
+
+  <section class="acciones">
+    <button class="guardar" (click)="guardarCambios()">GUARDAR CAMBIOS</button>
+    <button (click)="reestablecer()">REESTABLECER</button>
+    <button class="cancelar" (click)="cancelar()">CANCELAR</button>
+  </section>
+</div>

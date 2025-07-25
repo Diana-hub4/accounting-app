@@ -1,0 +1,126 @@
+.contenedor {
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+
+  h2 {
+    color: #064e3b;
+    margin-bottom: 2rem;
+  }
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin: 1rem 0 0.25rem;
+  }
+
+  input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .editable {
+    display: flex;
+    align-items: center;
+
+    input {
+      flex: 1;
+    }
+
+    button {
+      margin-left: 0.5rem;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .receptor-fecha {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+
+    .receptor, .fecha {
+      flex: 1;
+    }
+  }
+
+  .productos {
+    margin-top: 2rem;
+
+    .tabla {
+      margin-top: 0.5rem;
+
+      .fila {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .encabezado {
+        font-weight: bold;
+        color: #064e3b;
+      }
+
+      input {
+        width: 100%;
+      }
+    }
+
+    .add-item {
+      margin-top: 0.5rem;
+      background: none;
+      color: #064e3b;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  .resumen {
+    margin-top: 2rem;
+    font-size: 1rem;
+
+    .total {
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .acciones {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    button {
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      border: 1px solid #064e3b;
+      background: white;
+      color: #064e3b;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .guardar {
+      background: #064e3b;
+      color: white;
+    }
+
+    .cancelar {
+      border-color: #8a1a1a;
+      color: #8a1a1a;
+    }
+  }
+}

@@ -1,13 +1,15 @@
+import { Component, inject } from '@angular/core';
+import template from './documento-soporte.component.html?raw';
+import styles from './documento-soporte.component.scss?inline';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-documento-soporte',
   standalone: true,
-  imports: [CommonModule, RouterModule],
-  templateUrl: './documento-soporte.component.html',
-  styleUrls: ['./documento-soporte.component.scss']
+  template,
+  styles: [styles],
+  imports: [CommonModule, RouterModule]
 })
 export class DocumentoSoporteComponent {
   mostrarInput = false;
@@ -22,7 +24,7 @@ export class DocumentoSoporteComponent {
     { id: '# 1005', fecha: '04/07/2025', proveedor: 'Parking', estado: 'En Proceso', precio: '$30.500 COP', observaciones: 'Ausencia de Descripción' }
   ];
 
-  constructor(private router: Router) {}
+  router = inject(Router);
 
   mostrarCarga() {
     this.mostrarInput = true;
