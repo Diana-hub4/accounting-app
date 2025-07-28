@@ -3,12 +3,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import template from './edicion-documento-soporte.component.html?raw';
+import styles from './edicion-documento-soporte.component.scss?inline';
+
 @Component({
   selector: 'app-edicion-documento-soporte',
   standalone: true,
   imports: [CommonModule, FormsModule, RouterModule],
-  templateUrl: './edicion-documento-soporte.component.html',
-  styleUrls: ['./edicion-documento-soporte.component.scss']
+  template,
+  styles: [styles]
 })
 export class EdicionDocumentoSoporteComponent {
   emisor = {
@@ -51,11 +54,11 @@ export class EdicionDocumentoSoporteComponent {
     history.back();
   }
 
-  reestablecer() {
+  resetForm() {
     window.location.reload();
   }
 
-  añadirItem() {
+  addItem() {
     this.items.push({ descripcion: '', cantidad: 1, total: 0 });
   }
 }

@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './ajustes.component.html',
   styleUrls: ['./ajustes.component.scss']
 })
-export class AjustesComponent {}
+export class AjustesComponent {
+}

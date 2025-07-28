@@ -57,6 +57,7 @@ html, body {
 
   .acciones {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 2rem;
@@ -139,13 +140,13 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 70px; /* puedes ajustar el ancho */
+  width: 70px;
   height: 100vh;
   background: linear-gradient(to bottom, #064e3b, #5e6f65);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem 0;
+  padding: 5.5rem 0;
   gap: 2rem;
   z-index: 100;
 }
@@ -198,14 +199,15 @@ html, body {
 
 .formatos-admitidos {
   font-size: 0.75rem;
-  color: #555;
-  margin-top: -1rem;
+  color: #064e3b;
+  margin-top: 0.5rem;
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .paginacion {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   gap: 0.5rem;
   margin-top: 1.5rem;

@@ -1,63 +1,99 @@
-<div class="contenedor">
-  <h2>EDICIÓN DE DOCUMENTOS SOPORTES</h2>
+<div class="layout-wrapper">
+  <!-- Menu lateral -->
+  <div class="lateral-menu">
+    <button title="Salir">
+      <img src="/src/assets/images/LOGOUT ICON.png" alt="Salir" />
+    </button>
+    <button title="Documentos">
+      <img src="/src/assets/images/LINBOX ICON.png" alt="Documentos" />
+    </button>
+    <button title="Facturas">
+      <img src="/src/assets/images/FILE TEXT ICON.png" alt="Facturas" />
+    </button>
+  </div>
 
-  <section class="emisor">
-    <label>Emisor</label>
-    <div class="editable">
-      <input [(ngModel)]="emisor.nombre" />
-      <button><img src="/src/assets/icons/edit.svg" alt="Editar" /></button>
-    </div>
-    <input [value]="emisor.nit" readonly />
-    <div class="editable">
-      <input [(ngModel)]="emisor.direccion" />
-      <button><img src="/src/assets/icons/edit.svg" alt="Editar" /></button>
-    </div>
-  </section>
-
-  <section class="receptor-fecha">
-    <div class="receptor">
-      <label>Señores</label>
-      <input [value]="receptor.nombre" readonly />
-      <input [value]="receptor.nit" readonly />
-      <input [value]="receptor.telefono" readonly />
+  <div class="contenedor">
+    <div class="top-bar">
+      <button class="editar-top">
+        <img src="/src/assets/images/EDIT ICON.png" alt="Editar" />
+      </button>
     </div>
 
-    <div class="fecha">
-      <label>Fecha de Emisión</label>
-      <input type="date" [(ngModel)]="fechaEmision" />
+    <h2>EDICIÓN DE DOCUMENTOS SOPORTES</h2>
 
-      <label>Número de Comprobante</label>
-      <input [(ngModel)]="comprobante" />
-    </div>
-  </section>
-
-  <section class="productos">
-    <label>Detalle del Producto o Servicio</label>
-    <div class="tabla">
-      <div class="fila encabezado">
-        <div>Descripción</div>
-        <div>Cantidad</div>
-        <div>Total</div>
+    <section class="emisor">
+      <label>Emisor</label>
+      <div class="editable">
+        <input [(ngModel)]="emisor.nombre" />
+        <img src="/src/assets/images/EDIT ICON.png" alt="Editar" />
       </div>
-      <div class="fila" *ngFor="let item of items">
-        <input [(ngModel)]="item.descripcion" />
-        <input type="number" [(ngModel)]="item.cantidad" />
-        <input type="text" [value]="item.total | currency:'COP':'symbol-narrow'" readonly />
+      <div class="editable">
+        <input [value]="emisor.nit" readonly />
+        <img src="/src/assets/images/COPY ICON.png" alt="Copiar" />
       </div>
-    </div>
+      <div class="editable">
+        <input [(ngModel)]="emisor.direccion" />
+        <img src="/src/assets/images/PENCIL ICON.png" alt="Editar" />
+      </div>
+    </section>
 
-    <button class="add-item" (click)="añadirItem()">+ Añadir Item</button>
-  </section>
+    <section class="receptor-fecha">
+      <div class="receptor">
+        <label>Señores</label>
+        <input [value]="receptor.nombre" readonly />
+        <input [value]="receptor.nit" readonly />
+        <input [value]="receptor.telefono" readonly />
+      </div>
 
-  <section class="resumen">
-    <div>Subtotal: {{ subtotal | number:'1.0-0' }} COP</div>
-    <div>IVA: {{ iva | number:'1.0-0' }} COP</div>
-    <div class="total">Total: {{ total | number:'1.0-0' }} COP</div>
-  </section>
+      <div class="fecha">
+        <label>Fecha de Emisión</label>
+        <div class="editable">
+          <input type="date" [(ngModel)]="fechaEmision" />
+          <img src="/src/assets/images/CALENDAR ICON.png" alt="Calendario" />
+        </div>
 
-  <section class="acciones">
-    <button class="guardar" (click)="guardarCambios()">GUARDAR CAMBIOS</button>
-    <button (click)="reestablecer()">REESTABLECER</button>
-    <button class="cancelar" (click)="cancelar()">CANCELAR</button>
-  </section>
+        <label>Número de Comprobante</label>
+        <div class="editable">
+          <input [(ngModel)]="comprobante" />
+          <img src="/src/assets/images/LINBOX ICON.png" alt="Icono Comprobante" />
+        </div>
+      </div>
+    </section>
+
+    <section class="productos">
+      <label>Detalle del Producto o Servicio</label>
+      <div class="tabla">
+        <div class="fila encabezado">
+          <div>Descripción</div>
+          <div>Cantidad</div>
+          <div>Total</div>
+        </div>
+        <div class="fila" *ngFor="let item of items">
+          <input [(ngModel)]="item.descripcion" />
+          <input type="number" [(ngModel)]="item.cantidad" />
+          <input type="text" [value]="item.total | currency:'COP':'symbol-narrow'" readonly />
+        </div>
+      </div>
+      <button class="add-item" (click)="addItem()">+ Añadir Item</button>
+    </section>
+
+    <section class="resumen">
+      <div>Subtotal: {{ subtotal | number:'1.0-0' }} COP</div>
+      <div>IVA: {{ iva | number:'1.0-0' }} COP</div>
+      <div class="total">Total: {{ total | number:'1.0-0' }} COP</div>
+    </section>
+
+    <section class="acciones">
+      <button class="guardar" (click)="guardarCambios()">GUARDAR CAMBIOS</button>
+      <button (click)="resetForm()">REESTABLECER</button>
+      <button class="cancelar" (click)="cancelar()">CANCELAR</button>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span>Política de privacidad</span>
+    <span>2025 Soluciones Tecnológicas</span>
+    <span>Términos y condiciones</span>
+  </footer>
 </div>

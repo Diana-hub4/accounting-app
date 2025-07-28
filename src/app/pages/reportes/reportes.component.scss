@@ -1,0 +1,181 @@
+.reportes {
+  padding: 2rem;
+  margin-left: 70px;
+  font-family: 'Segoe UI', sans-serif;
+
+  h2 {
+    color: #064e3b;
+    font-size: 28px;
+    margin-bottom: 1rem;
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background: #f0ecf7;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    max-width: 400px;
+    margin-bottom: 2rem;
+
+    input {
+      border: none;
+      background: transparent;
+      flex: 1;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .cliente-box {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+
+    .cliente-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+
+      .cliente-info {
+        display: flex;
+        flex-direction: column;
+
+        strong {
+          font-weight: bold;
+          font-size: 1.1rem;
+        }
+
+        span {
+          font-size: 0.9rem;
+          color: #555;
+        }
+      }
+    }
+
+    .cliente-documentos {
+      margin-top: 1rem;
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 1rem;
+
+        th, td {
+          padding: 0.75rem;
+          text-align: left;
+          border-bottom: 1px solid #eee;
+        }
+
+        th {
+          font-weight: bold;
+          color: #064e3b;
+        }
+
+        button {
+          margin-right: 0.5rem;
+          padding: 0.4rem 0.8rem;
+          border-radius: 4px;
+          border: none;
+          font-weight: bold;
+          cursor: pointer;
+        }
+
+        .descargar {
+          background: #064e3b;
+          color: #fff;
+        }
+
+        .compartir {
+          background: transparent;
+          border: 1px solid #064e3b;
+          color: #064e3b;
+        }
+      }
+
+      .acciones-globales {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+      }
+    }
+
+    .ultimo-reporte {
+      margin-top: 0.5rem;
+      text-align: right;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  }
+
+  .siguiente {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      background: transparent;
+      border: none;
+      color: #064e3b;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.lateral-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 100vh;
+  background: linear-gradient(to bottom, #064e3b, #5e6f65);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5.5rem;
+  gap: 2rem;
+  z-index: 100;
+
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.footer {
+  background: #ffffff;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  color: #555;
+  margin-left: 70px;
+
+  span {
+    flex: 1;
+    text-align: center;
+  }
+}

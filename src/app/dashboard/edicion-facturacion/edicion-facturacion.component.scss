@@ -1,6 +1,7 @@
 .edicion-facturacion {
   padding: 2rem;
   margin-left: 80px;
+  font-family: 'Segoe UI', sans-serif;
 
   h1 {
     color: #064e3b;
@@ -16,10 +17,12 @@
       display: flex;
       gap: 1rem;
       align-items: center;
+      flex-wrap: wrap;
 
       label {
         font-weight: bold;
         width: 150px;
+        color: #064e3b;
       }
 
       input, textarea {
@@ -27,6 +30,7 @@
         padding: 0.5rem;
         border: 1px solid #ccc;
         border-radius: 4px;
+        width: 100%;
       }
 
       .editar-btn, .add-item {
@@ -41,15 +45,22 @@
 
     .totales {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       margin-top: 1rem;
       font-weight: bold;
+      gap: 1rem;
+
+      div {
+        flex: 1;
+      }
     }
 
     .acciones {
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       gap: 1rem;
+      flex-wrap: wrap;
 
       .guardar {
         background: #064e3b;
@@ -69,5 +80,92 @@
         cursor: pointer;
       }
     }
+  }
+}
+
+
+.lateral-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 100vh;
+  background: linear-gradient(to bottom, #064e3b, #5e6f65);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5.5rem;
+  gap: 2rem;
+  z-index: 100;
+
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
+}
+
+.footer {
+  background: #ffffff;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  color: #555;
+  margin-left: 70px;
+
+  span {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .edicion-facturacion {
+    padding: 1rem;
+    margin-left: 0;
+
+    form .form-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .totales, .acciones {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .lateral-menu {
+    position: absolute;
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5rem;
+    top: auto;
+    bottom: 0;
+  }
+
+  .footer {
+    margin-left: 0;
   }
 }
