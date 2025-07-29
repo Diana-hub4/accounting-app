@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+﻿import { Component, inject } from '@angular/core';
 import template from './documento-soporte.component.html?raw';
 import styles from './documento-soporte.component.scss?inline';
 import { CommonModule } from '@angular/common';
