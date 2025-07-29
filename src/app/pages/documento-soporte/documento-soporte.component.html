@@ -1,18 +1,7 @@
-﻿<div class="layout-wrapper">
-  <!-- Menu lateral -->
-  <div class="lateral-menu">
-    <button title="Salir" (click)="volverLogin()">
-      <img src="/src/assets/images/LOGOUT ICON.png" alt="Salir" />
-    </button>
-    <button title="Documentos">
-      <img src="/src/assets/images/LINBOX ICON.png" alt="Documentos" />
-    </button>
-    <button title="Facturas">
-      <img src="/src/assets/images/FILE TEXT ICON.png" alt="Facturas" />
-    </button>
-  </div>
+﻿<app-lateral-menu-conia></app-lateral-menu-conia>
 
-  <!-- Contenido Principal -->
+<div class="layout-wrapper">
+
   <main class="documento-soporte">
     <header>
       <h1>DOCUMENTO SOPORTE</h1>
@@ -83,9 +72,6 @@
     <button>Siguiente &raquo;</button>
   </div>
 
-  <footer class="footer">
-    <span>Política de privacidad</span>
-    <span>2025 Soluciones Tecnológicas</span>
-    <span>Términos y condiciones</span>
-  </footer>
 </div>
+
+<app-footer-conia></app-footer-conia>

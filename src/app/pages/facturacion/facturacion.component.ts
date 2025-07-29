@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { LateralMenuConiaComponent } from '../../shared/components/lateral-menu-conia/lateral-menu-conia.component';
+import { FooterConiaComponent } from '../../shared/components/footer-conia/footer-conia.component';
 
 @Component({ 
   selector: 'app-facturacion',
@@ -9,7 +10,8 @@ import { LateralMenuConiaComponent } from '../../shared/components/lateral-menu-
   imports: [
     CommonModule,
     RouterModule,
-    LateralMenuConiaComponent  // ✅ Usa el componente aquí
+    LateralMenuConiaComponent,
+    FooterConiaComponent
   ],
   templateUrl: './facturacion.component.html',
   styleUrls: ['./facturacion.component.scss']

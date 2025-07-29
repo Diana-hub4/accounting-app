@@ -52,6 +52,11 @@ export const routes: Routes = [
       import('./pages/reportes/reportes.component').then(m => m.ReportesComponent)
   },
   {
+    path: 'dashboard/edicion-clientes',
+    loadComponent: () => 
+      import('./dashboard/edicion-clientes/edicion-clientes.component').then(m => m.EdicionClientesComponent)
+  },
+  {
     path: '**',
     redirectTo: 'register'
   },

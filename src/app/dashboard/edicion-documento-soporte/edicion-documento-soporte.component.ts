@@ -2,14 +2,21 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
+import { LateralMenuConiaComponent } from '../../shared/components/lateral-menu-conia/lateral-menu-conia.component';
+import { FooterConiaComponent } from '../../shared/components/footer-conia/footer-conia.component';
 import template from './edicion-documento-soporte.component.html?raw';
 import styles from './edicion-documento-soporte.component.scss?inline';
 
 @Component({
   selector: 'app-edicion-documento-soporte',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [
+    CommonModule, 
+    FormsModule, 
+    RouterModule,
+    LateralMenuConiaComponent,
+    FooterConiaComponent
+  ],
   template,
   styles: [styles]
 })

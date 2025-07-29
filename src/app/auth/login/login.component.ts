@@ -2,11 +2,12 @@
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
+import { FooterConiaComponent } from '../../shared/components/footer-conia/footer-conia.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, FooterConiaComponent],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })

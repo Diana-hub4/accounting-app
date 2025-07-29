@@ -1,8 +1,17 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { LateralMenuConiaComponent } from '../../shared/components/lateral-menu-conia/lateral-menu-conia.component';
+import { FooterConiaComponent } from '../../shared/components/footer-conia/footer-conia.component';
 
 @Component({
   selector: 'app-edicion-facturacion',
+  standalone: true,
+  imports: [
+    FormsModule,
+    LateralMenuConiaComponent,
+    FooterConiaComponent
+  ],
   templateUrl: './edicion-facturacion.component.html',
   styleUrls: ['./edicion-facturacion.component.scss']
 })

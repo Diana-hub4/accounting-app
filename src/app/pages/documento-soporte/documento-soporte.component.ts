@@ -3,13 +3,20 @@ import template from './documento-soporte.component.html?raw';
 import styles from './documento-soporte.component.scss?inline';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
+import { LateralMenuConiaComponent } from '../../shared/components/lateral-menu-conia/lateral-menu-conia.component';
+import { FooterConiaComponent } from '../../shared/components/footer-conia/footer-conia.component';
 
 @Component({
   selector: 'app-documento-soporte',
   standalone: true,
   template,
   styles: [styles],
-  imports: [CommonModule, RouterModule]
+  imports: [
+    CommonModule, 
+    RouterModule,
+    LateralMenuConiaComponent,
+    FooterConiaComponent
+  ]
 })
 export class DocumentoSoporteComponent {
   mostrarInput = false;

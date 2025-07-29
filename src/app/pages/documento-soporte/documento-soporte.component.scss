@@ -136,33 +136,6 @@ html, body {
   }
 }
 
-.lateral-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 70px;
-  height: 100vh;
-  background: linear-gradient(to bottom, #064e3b, #5e6f65);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5.5rem 0;
-  gap: 2rem;
-  z-index: 100;
-}
-
-.lateral-menu button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  font-size: 1.5rem;
-}
-
-.lateral-menu button:hover {
-  opacity: 0.8;
-}
-
 .layout-wrapper {
   display: flex;
   flex-direction: column;
@@ -171,31 +144,6 @@ html, body {
   .documento-soporte {
     flex: 1;
   }
-
-  .footer {
-    background: #ffffff;
-    border-top: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 1rem;
-    font-size: 0.75rem;
-    color: #555;
-
-    span {
-      flex: 1;
-      text-align: center;
-    }
-
-    .footer-left {
-      text-align: left;
-    }
-
-    .footer-right {
-      text-align: right;
-    }
-  }
-}
 
 .formatos-admitidos {
   font-size: 0.75rem;
@@ -231,4 +179,4 @@ html, body {
     color: #666;
   }
 }
- 
+}
