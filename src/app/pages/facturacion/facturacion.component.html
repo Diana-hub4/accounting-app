@@ -1,18 +1,6 @@
-﻿<div class="layout-wrapper">
-  <!-- Menu lateral -->
-  <div class="lateral-menu">
-    <button title="Salir" (click)="volverLogin()">
-      <img src="/src/assets/images/LOGOUT ICON.png" alt="Salir" />
-    </button>
-    <button title="Documentos">
-      <img src="/src/assets/images/LINBOX ICON.png" alt="Documentos" />
-    </button>
-    <button title="Facturas">
-      <img src="/src/assets/images/FILE TEXT ICON.png" alt="Facturas" />
-    </button>
-  </div>
+﻿<app-lateral-menu-conia></app-lateral-menu-conia>
 
-  <!-- Contenido Principal -->
+<div class="layout-wrapper">
   <main class="facturacion">
     <header>
       <h1>FACTURACIÓN</h1>
@@ -22,20 +10,20 @@
       </p>
     </header>
 
-  <div class="acciones">
-    <div class="grupo-cargar">
-      <button class="btn cargar">
-        <img src="/src/assets/images/UPLOAD ICON.png" alt="Cargar">
-        <span>Cargar Documentos</span>
-      </button>
-      <p class="formatos-admitidos">Aceptamos PDF, XML, JPG, PNG, DOCX</p>
-    </div>
+    <div class="acciones">
+      <div class="grupo-cargar">
+        <button class="btn cargar">
+          <img src="/src/assets/images/UPLOAD ICON.png" alt="Cargar" />
+          <span>Cargar Documentos</span>
+        </button>
+        <p class="formatos-admitidos">Aceptamos PDF, XML, JPG, PNG, DOCX</p>
+      </div>
 
-    <button class="btn generar">
-      <img src="/src/assets/images/FILE TEXT ICON.png" alt="Generar">
-      <span>Generar Facturas</span>
-    </button>
-  </div>
+      <button class="btn generar">
+        <img src="/src/assets/images/FILE TEXT ICON.png" alt="Generar" />
+        <span>Generar Facturas</span>
+      </button>
+    </div>
 
     <div class="carga-flotante" *ngIf="mostrarInput">
       <input type="file" (change)="procesarArchivo()" />
@@ -90,9 +78,10 @@
     <button>Siguiente &raquo;</button>
   </div>
 
-  <footer class="footer">
+  <!-- Footer reutilizable -->
+  <div class="footer-conia">
     <span>Política de privacidad</span>
     <span>2025 Soluciones Tecnológicas</span>
     <span>Términos y condiciones</span>
-  </footer>
+  </div>
 </div>

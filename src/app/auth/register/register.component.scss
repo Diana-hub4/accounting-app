@@ -1,64 +1,13 @@
+@use '../../../styles/sidebar-conia.scss' as *;
+@use '../../../styles/footer-conia.scss' as *;
+
 .register-container {
   display: flex;
   min-height: 100vh;
 
-.register-left {
-  position: relative;
-  color: white;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  overflow: hidden;
-
-  // Imagen de fondo
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url('/src/assets/images/WALLPAPER\ REGISTER.png') center/cover no-repeat;
-    z-index: 0;
+  .sidebar-conia {
+    width: 50%;
   }
-
-  // Contenido encima del fondo
-  .logo {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    z-index: 1;
-
-    img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 20px;
-    }
-
-     h1 {
-      font-family: 'Inter', sans-serif;
-      font-size: 50px;
-      font-weight: 550;
-      background: linear-gradient(90deg, #ffffff, #a0e6b0);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      }
-    }
-
-  p {
-    font-weight: 400;
-    line-height: 1.4;
-    position: relative;
-    z-index: 1;
-    margin-top: 1rem;
-    max-width: 300px;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-}
-
 
   .register-right {
     flex: 1;
@@ -154,27 +103,5 @@
         }
       }
     }
-  }
-}
-
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  font-size: 0.75rem;
-  color: #555;
-
-  span {
-    flex: 1;
-    text-align: center;
-  }
-
-  .footer-left {
-    text-align: left;
-  }
-
-  .footer-right {
-    text-align: right;
   }
 }

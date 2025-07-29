@@ -1,3 +1,4 @@
+@use '../../../styles/footer-conia.scss' as *;
 
 * {
   margin: 0;
@@ -8,7 +9,6 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 0;
   width: 100%;
   height: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -73,10 +73,10 @@ html, body {
     }
 
     .btn {
-      display: inline-flex;         
-      align-items: center;       
-      justify-content: center;     
-      gap: 0.5rem;                
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
       padding: 0.75rem 1.5rem;
       border: none;
       border-radius: 6px;
@@ -84,17 +84,17 @@ html, body {
       font-size: 1rem;
       font-weight: 500;
       cursor: pointer;
-      width: auto;            
-      background: #064e3b;    
+      width: auto;
+      background: #064e3b;
 
       img {
         width: 20px;
         height: 20px;
-        flex-shrink: 0;       
+        flex-shrink: 0;
       }
 
       span {
-        white-space: nowrap;   
+        white-space: nowrap;
       }
     }
   }
@@ -105,7 +105,7 @@ html, body {
     background: #fff;
     position: relative;
     z-index: 1;
-    margin-top: 1 rem;
+    margin-top: 1rem;
     border: 1px solid #ddd;
 
     thead {
@@ -116,13 +116,13 @@ html, body {
     }
 
     tbody tr:nth-child(even) {
-      background-color: #f2f2f2; 
+      background-color: #f2f2f2;
     }
 
     tbody tr:nth-child(odd) {
-      background-color: #ffffff; 
+      background-color: #ffffff;
     }
-    
+
     th, td {
       padding: 0.75rem;
       text-align: left;
@@ -151,49 +151,6 @@ html, body {
   }
 }
 
-.lateral-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 70px; 
-  height: 100vh;
-  background: linear-gradient(to bottom, #064e3b, #5e6f65);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem 0;
-  gap: 2rem;
-  z-index: 100;
-
-  button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-    font-size: 1.5rem;
-
-    &:hover {
-      opacity: 0.8;
-    }
-
-    &:first-child {
-      margin-top: 3.9rem; 
-    }
-  }
-}
-
-.lateral-menu button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  font-size: 1.5rem;
-}
-
-.lateral-menu button:hover {
-  opacity: 0.8;
-}
-
 .layout-wrapper {
   display: flex;
   flex-direction: column;
@@ -202,33 +159,6 @@ html, body {
 
   .facturacion {
     flex: 1;
-  }
-
-  .footer {
-    background: #ffffff;
-    border-top: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 1rem;
-    font-size: 0.75rem;
-    color: #555;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-
-    span {
-      flex: 1;
-      text-align: center;
-    }
-
-    .footer-left {
-      text-align: left;
-    }
-
-    .footer-right {
-      text-align: right;
-    }
   }
 }
 
