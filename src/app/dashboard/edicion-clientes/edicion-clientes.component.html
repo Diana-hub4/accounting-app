@@ -1,96 +1,105 @@
-﻿<section class="edicion-clientes-container">
-  <h1>EDICIÓN DE CLIENTES</h1>
+﻿<div class="layout-wrapper">
+  <!-- Menú lateral reutilizable -->
+  <app-lateral-menu-conia></app-lateral-menu-conia>
 
-  <!-- Datos Básicos -->
-  <div class="datos-basicos">
-    <h2>Datos Básicos</h2>
+  <!-- Contenedor principal -->
+  <section class="edicion-clientes-container">
+    <h1>EDICIÓN DE CLIENTES</h1>
 
+    <!-- Imagen del cliente -->
     <div class="foto-container">
-      <img src="/assets/icons/camera-icon.svg" alt="Foto cliente" />
+      <img src="/src/assets/images/icono-perfil.png" alt="Foto cliente" />
     </div>
 
-    <div class="campo">
-      <label>Tipo de Documento</label>
-      <input type="text" [value]="cliente.tipoDocumento" readonly class="readonly" />
+    <!-- Datos Básicos -->
+    <div class="datos-basicos">
+      <h2>Datos Básicos</h2>
+
+      <div class="campo">
+        <label>Tipo de Documento</label>
+        <input type="text" [value]="cliente.tipoDocumento" readonly class="readonly" />
+      </div>
+
+      <div class="campo">
+        <label>Número de Documento</label>
+        <input type="text" [value]="cliente.numeroDocumento" readonly class="readonly" />
+      </div>
+
+      <div class="campo">
+        <label>Correo Electrónico</label>
+        <input type="email" [value]="cliente.correo" readonly class="readonly" />
+      </div>
+
+      <div class="campo">
+        <label>Nombre Completo</label>
+        <input type="text" [value]="cliente.nombre" readonly class="readonly" />
+      </div>
+
+      <div class="campo">
+        <label>Teléfono</label>
+        <input type="text" [value]="cliente.telefono" readonly class="readonly" />
+      </div>
+
+      <div class="campo">
+        <label>Celular</label>
+        <input type="text" [value]="cliente.celular" readonly class="readonly" />
+      </div>
+
+      <div class="campo">
+        <label>Dirección</label>
+        <input type="text" [value]="cliente.direccion" readonly class="readonly" />
+      </div>
+
+      <div class="campo">
+        <label>Ciudad</label>
+        <input type="text" [value]="cliente.ciudad" readonly class="readonly" />
+      </div>
     </div>
 
-    <div class="campo">
-      <label>Número de Documento</label>
-      <input type="text" [value]="cliente.numeroDocumento" readonly class="readonly" />
+    <!-- Datos de Facturación y Envío -->
+    <div class="datos-facturacion">
+      <h2>Datos para Facturación y Envío</h2>
+
+      <div class="campo">
+        <label>Tipo de Régimen</label>
+        <select>
+          <option value="">Seleccionar</option>
+          <option *ngFor="let r of regimenes">{{ r }}</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label>Responsabilidad Fiscal</label>
+        <select>
+          <option value="">Seleccionar</option>
+          <option *ngFor="let r of responsabilidades">{{ r }}</option>
+        </select>
+      </div>
+
+      <div class="regimen-info">
+        <p><strong>Régimen Ordinario:</strong> Aplica a todas las personas naturales y jurídicas, nacionales y extranjeras...</p>
+        <p><strong>Régimen Especial:</strong> Obligación de declarar para ciertos contribuyentes.</p>
+        <p><strong>Régimen de Tributación Simple:</strong> Obligación de declarar para ciertos contribuyentes.</p>
+      </div>
+
+      <div class="responsabilidad-info">
+        <label for="busqueda-responsabilidad">Buscar código o frase</label>
+        <input type="text" id="busqueda-responsabilidad" placeholder="Buscar..." />
+        <ul>
+          <li *ngFor="let r of responsabilidades">
+            <input type="checkbox" /> {{ r }}
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <div class="campo">
-      <label>Correo Electrónico</label>
-      <input type="email" [value]="cliente.correo" readonly class="readonly" />
+    <!-- Botones de acción -->
+    <div class="acciones">
+      <button class="guardar">GUARDAR CAMBIOS</button>
+      <button class="restablecer">REESTABLECER</button>
+      <button class="cancelar">CANCELAR</button>
     </div>
+  </section>
+</div>
 
-    <div class="campo">
-      <label>Nombre Completo</label>
-      <input type="text" [value]="cliente.nombre" readonly class="readonly" />
-    </div>
-
-    <div class="campo">
-      <label>Teléfono</label>
-      <input type="text" [value]="cliente.telefono" readonly class="readonly" />
-    </div>
-
-    <div class="campo">
-      <label>Celular</label>
-      <input type="text" [value]="cliente.celular" readonly class="readonly" />
-    </div>
-
-    <div class="campo">
-      <label>Dirección</label>
-      <input type="text" [value]="cliente.direccion" readonly class="readonly" />
-    </div>
-
-    <div class="campo">
-      <label>Ciudad</label>
-      <input type="text" [value]="cliente.ciudad" readonly class="readonly" />
-    </div>
-  </div>
-
-  <!-- Datos para Facturación y Envío -->
-  <div class="datos-facturacion">
-    <h2>Datos para Facturación y Envío</h2>
-
-    <div class="campo">
-      <label>Tipo de Régimen</label>
-      <select>
-        <option value="">Seleccionar</option>
-        <option *ngFor="let r of regimenes">{{ r }}</option>
-      </select>
-    </div>
-
-    <div class="campo">
-      <label>Responsabilidad Fiscal</label>
-      <select>
-        <option value="">Seleccionar</option>
-        <option *ngFor="let r of responsabilidades">{{ r }}</option>
-      </select>
-    </div>
-
-    <div class="regimen-info">
-      <p><strong>Régimen Ordinario:</strong> Aplica a todas las personas naturales y jurídicas, nacionales y extranjeras, no excluidas por la norma para ser no contribuyentes de impuesto de renta.</p>
-      <p><strong>Régimen Especial:</strong> Obligación de declarar para ciertos contribuyentes.</p>
-      <p><strong>Régimen de Tributación Simple:</strong> Obligación de declarar para ciertos contribuyentes.</p>
-    </div>
-
-    <div class="responsabilidad-info">
-      <label for="busqueda-responsabilidad">Buscar código o frase</label>
-      <input type="text" id="busqueda-responsabilidad" placeholder="Buscar..." />
-      <ul>
-        <li *ngFor="let r of responsabilidades">
-          <input type="checkbox" /> {{ r }}
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Acciones -->
-  <div class="acciones">
-    <button class="guardar">GUARDAR CAMBIOS</button>
-    <button class="restablecer">REESTABLECER</button>
-    <button class="cancelar">CANCELAR</button>
-  </div>
-</section>
+<app-footer-conia></app-footer-conia>

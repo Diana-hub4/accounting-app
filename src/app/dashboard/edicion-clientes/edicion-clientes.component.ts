@@ -1,8 +1,17 @@
-﻿
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { LateralMenuConiaComponent } from '../../shared/components/lateral-menu-conia/lateral-menu-conia.component';
+import { FooterConiaComponent } from '../../shared/components/footer-conia/footer-conia.component';
 
 @Component({
   selector: 'app-edicion-clientes',
+  imports: [
+    CommonModule,
+    FormsModule,
+    FooterConiaComponent,
+    LateralMenuConiaComponent
+  ],
   templateUrl: './edicion-clientes.component.html',
   styleUrls: ['./edicion-clientes.component.scss']
 })
