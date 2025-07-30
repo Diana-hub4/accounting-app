@@ -1,33 +1,116 @@
-.lateral-menu-conia {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 70px;
+.layout-conia {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 80px 1fr;
   height: 100vh;
-  background: linear-gradient(to bottom, #064e3b, #5e6f65);
+  width: 100vw;
+  grid-template-areas: "topbar topbar" "sidebar main";
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 1rem 0;
-  gap: 2rem;
-  z-index: 100;
+}
 
-  button {
-    background: transparent;
+.topbar-conia {
+  grid-area: topbar;
+  background: linear-gradient(to right, #064e3b, #5e6f65);
+  height: 80px; 
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 1.5rem;
+
+  .logo-conia {
+    width: 60px;
+    height: 60px;
+    background-image: url('/src/assets/images/logo-conia.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .logout-btn {
+    background-image: url('/src/assets/images/LOGOUT\ ICON.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 35px;
+    height: 35px;
     border: none;
     cursor: pointer;
-
-    img {
-      width: 30px;
-      height: 30px;
-    }
 
     &:hover {
       opacity: 0.8;
     }
+  }
+}
 
-    &:first-child {
-      margin-top: 3.9rem;
+.main-body {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar-conia {
+  width: 120px;
+  background: linear-gradient(to bottom, #064e3b, #5e6f65);
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  .logo-conia {
+    width: 60px;
+    height: 60px;
+    background-image: url('/src/assets/images/logo-conia.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+    margin-left: 0;
+  }
+
+  .avatar-conia {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: url('/src/assets/images/avatar-generico.png');
+    background-size: cover;
+    background-position: center;
+    margin-top: 1rem;
+    border: 2px solid #b1e3c4;
+  }
+
+  .menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+
+    button {
+      background: none;
+      border: none;
+      width: 40px;
+      height: 40px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      cursor: pointer;
+
+      &:nth-child(1) {
+        background-image: url('/src/assets/images/LINBOX ICON.png');
+      }
+
+      &:nth-child(2) {
+        background-image: url('/src/assets/images/FILE TEXT ICON.png');
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
 }

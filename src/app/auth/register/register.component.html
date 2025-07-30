@@ -1,9 +1,9 @@
 ﻿<div class="register-container">
-  <!-- Panel Izquierdo -->
+  <!-- Panel Izquierdo (visible solo en desktop) -->
   <div class="sidebar-conia">
     <div class="logo">
-      <img src="/src/assets/images/logo-conia.png" alt="Logo ConIA" />
-      <h1>CONIA</h1>
+      <div class="logo-img"></div>
+      <h1 class="conia-text">CONIA</h1>
     </div>
     <p>
       Optimiza la gestión contable con ConIA, transforma los datos en decisiones estratégicas desde un solo lugar, sin perder el control.
@@ -12,40 +12,42 @@
 
   <!-- Panel Derecho -->
   <div class="register-right">
-    <h2>REGISTRARSE</h2>
+    <!-- Logo CONIA solo para móvil -->
+    <div class="mobile-logo">
+      <div class="conia-text">CONIA</div>
+    </div>
+    
+    <!-- Título (visible solo en desktop) -->
+    <h2 class="desktop-title">REGISTRARSE</h2>
+    
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-
+      <!-- Campos del formulario (se mantienen igual) -->
       <div class="form-group">
-        <div class="input-icon">
-          <img src="/src/assets/images/NAME ICON.png" alt="Nombre" />
+        <div class="input-icon icon-name">
           <input type="text" placeholder="Nombre" formControlName="name" />
         </div>
       </div>
 
       <div class="form-group">
-        <div class="input-icon">
-          <img src="/src/assets/images/LASTNAME ICON.png" alt="Apellido" />
+        <div class="input-icon icon-lastname">
           <input type="text" placeholder="Apellido" formControlName="lastname" />
         </div>
       </div>
 
       <div class="form-group">
-        <div class="input-icon">
-          <img src="/src/assets/images/MAIL ICON.png" alt="Correo electrónico" />
+        <div class="input-icon icon-email">
           <input type="email" placeholder="Correo electrónico" formControlName="email" />
         </div>
       </div>
 
       <div class="form-group">
-        <div class="input-icon">
-          <img src="/src/assets/images/PASSWORD ICON.png" alt="Contraseña" />
+        <div class="input-icon icon-password">
           <input type="password" placeholder="Contraseña" formControlName="password" />
         </div>
       </div>
 
       <div class="form-group">
-        <div class="input-icon">
-          <img src="/src/assets/images/CONFIRM PASSWORD ICON.png" alt="Confirmar contraseña" />
+        <div class="input-icon icon-confirm">
           <input type="password" placeholder="Confirmar contraseña" formControlName="confirmPassword" />
         </div>
       </div>
@@ -65,4 +67,3 @@
 </div>
 
 <app-footer-conia></app-footer-conia>
-

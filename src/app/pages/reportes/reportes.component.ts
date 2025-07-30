@@ -1,10 +1,18 @@
 ﻿import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { LateralMenuConiaComponent } from '../../shared/components/lateral-menu-conia/lateral-menu-conia.component';
+import { FooterConiaComponent } from '../../shared/components/footer-conia/footer-conia.component';
 
 @Component({
   selector: 'app-reportes',
+  standalone: true,
+  imports: [
+    CommonModule,
+    LateralMenuConiaComponent,
+    FooterConiaComponent
+  ],
   templateUrl: './reportes.component.html',
   styleUrls: ['./reportes.component.scss'],
-  standalone: true
 })
 export class ReportesComponent {
   busqueda = '';

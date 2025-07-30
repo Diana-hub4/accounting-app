@@ -1,66 +1,216 @@
+
 @use '../../../styles/sidebar-conia.scss' as *;
 
+/* ---------- GLOBAL RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* ---------- CONTAINER ---------- */
 .register-container {
   display: flex;
-  min-height: 100vh;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100dvh;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  @media (max-width: 767px) {
+    background: url('/src/assets/images/fondo.png') no-repeat center center;
+    background-size: cover;
+    justify-content: center;
+  }
 
   .sidebar-conia {
-    width: 50%;
+    background: url('/src/assets/images/fondo.png') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 2rem;
+    width: 100%;
+    flex: 1 1 50%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      display: flex;
+      width: 50%;
+    }
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+
+      .logo-img {
+        background-image: url('/src/assets/images/logo-conia.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 40px;
+      }
+
+      .conia-text {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: linear-gradient(to right, #b1e3c4, #064e3b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 1px;
+      }
+    }
+
+    p {
+      margin-top: 1.5rem;
+      max-width: 320px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
   }
 
   .register-right {
-    flex: 1;
+    flex: 1 1 50%;
+    max-width: 50%;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    @media (max-width: 767px) {
+      max-width: 100%;
+      padding: 1.5rem;
+    }
 
     h2 {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       font-weight: bold;
-      color: #064e3b; 
+      font-size: 1.8rem;
+      color: #064e3b;
+
+      @media (max-width: 767px) {
+        color: white;
+        display: none;
+      }
+    }
+
+    .mobile-logo {
+      display: none;
+      
+      @media (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+        
+        .conia-text {
+          font-size: 2rem;
+          font-weight: 800;
+          background: linear-gradient(to right, #b1e3c4, #064e3b);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          margin-bottom: 1rem;
+        }
+      }
     }
 
     form {
+      width: 100%;
+      max-width: 320px;
       display: flex;
       flex-direction: column;
 
       .form-group {
         margin-bottom: 1rem;
+        position: relative;
 
         .input-icon {
           position: relative;
-          display: flex;
-          align-items: center;
 
-          img {
+          input {
+            background-color: white;
+            width: 100%;
+            padding: 0.625rem 0.75rem 0.625rem 40px;
+            border: 1px solid #064e3b;
+            border-radius: 10px;
+            color: #333;
+            font-size: 0.9rem;
+            height: 2.5rem;
+          }
+
+          &::before {
+            content: '';
             position: absolute;
             top: 50%;
-            left: 10px;
+            left: 12px;
             transform: translateY(-50%);
             width: 20px;
             height: 20px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 2;
           }
 
-          input {
-              background-color: #ffffff;
-              width: 100%;
-              padding-left: 40px;
-              padding-right: 40px;
-              height: 2.5rem;
-              border: 1px solid #ccc;
-              border-radius: 8px;
-              font-size: 0.9rem;
-            }
+          &.icon-name::before {
+            background-image: url('/src/assets/images/NAME ICON.png');
+            left: 12px;
+          }
+
+          &.icon-lastname::before {
+            background-image: url('/src/assets/images/LASTNAME ICON.png');
+            left: 12px;
+          }
+
+          &.icon-email::before {
+            background-image: url('/src/assets/images/MAIL ICON.png');
+            left: 12px;
+          }
+
+          &.icon-password::before {
+            background-image: url('/src/assets/images/PASSWORD ICON.png');
+            left: 12px;
+          }
+
+          &.icon-confirm::before {
+            background-image: url('/src/assets/images/CONFIRM PASSWORD ICON.png');
+            left: 12px;
           }
         }
+      }
 
       .form-check {
         display: flex;
         align-items: center;
         margin-bottom: 1rem;
+        color: #064e3b;
 
-        input[type='checkbox']{
+        @media (max-width: 767px) {
+          color: white;
+        }
+
+        input[type='checkbox'] {
           width: 16px;
           height: 16px;
           accent-color: #064e3b;
@@ -80,6 +230,7 @@
         cursor: pointer;
         text-align: center;
         font-weight: 600;
+        margin-bottom: 1rem;
 
         &:hover {
           background: #07654c;
@@ -89,18 +240,34 @@
 
     .login-link {
       text-align: center;
-      margin-top: 2rem;
       font-size: 0.9rem;
+      color: #064e3b;
+
+      @media (max-width: 767px) {
+        color: white;
+      }
 
       a {
-        display: inline-block;
-        color: #064e3b;
         text-decoration: underline;
+        color: inherit;
 
         &:hover {
           color: #07654c;
         }
       }
     }
+  }
+}
+
+/* Footer solo en escritorio */
+@media (max-width: 767px) {
+  app-footer-conia {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  app-footer-conia {
+    display: block !important;
   }
 }

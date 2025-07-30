@@ -17,11 +17,6 @@ export const routes: Routes = [
       import('./auth/login/login.component').then(m => m.LoginComponent)
   },
   {
-    path: 'background-test',
-    loadComponent: () => 
-      import('./background-test/background-test.component').then(m => m.BackgroundTestComponent)
-  },
-  {
     path: 'dashboard/facturacion',
     loadComponent: () => 
       import('./pages/facturacion/facturacion.component').then(m => m.FacturacionComponent)

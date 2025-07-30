@@ -1,9 +1,9 @@
-<div class="container-login">
+<div class="container-login flex flex-col md:flex-row min-h-screen overflow-x-hidden">
   <!-- Panel Izquierdo -->
-  <div class="sidebar-conia">
+  <div class="sidebar-conia hidden md:flex w-full md:w-1/2">
     <div class="logo">
-      <img src="/src/assets/images/logo-conia.png" alt="Logo ConIA" />
-      <h1>CONIA</h1>
+      <div class="logo-img"></div>
+      <div class="conia-text">CONIA</div>
     </div>
     <p>
       Optimiza la gestión contable con ConIA, transforma los datos en decisiones estratégicas desde un solo lugar, sin perder el control.
@@ -11,44 +11,65 @@
   </div>
 
   <!-- Panel Derecho -->
-  <div class="login-right">
+  <div class="login-right w-full">
+
+    <!-- Título solo desktop -->
     <h2 class="login-title">INICIAR SESIÓN</h2>
 
-    <div class="login-google-btn">
-      <img src="/src//assets/images/icono-google.png" alt="Google" />
+    <!-- Versión Móvil Título y Logo -->
+    <div class="login-title-mobile">
+      <div class="brand">
+        <div class="logo-icon"></div>
+        <div class="conia-text">CONIA</div>
+      </div>
+      <p class="iniciar-solo-mobile">INICIAR SESIÓN</p>
+    </div>
+
+    <!-- Botón Google -->
+    <div class="login-google-btn w-full max-w-xs">
+      <div class="icon-google"></div>
       <span>Inicia sesión con tu cuenta de Google</span>
     </div>
 
+    <!-- Divider -->
     <div class="login-divider">O</div>
 
-    <form class="login-form">
+    <!-- FORMULARIO -->
+    <form class="login-form w-full max-w-xs" (submit)="login($event)">
       <div class="login-form-group">
-        <div class="login-input-icon">
-          <img src="/src/assets/images/icono-correo-verde.png" alt="Correo" />
-          <input type="email" placeholder="Correo electrónico" />
+        <div class="login-input-icon icon-email">
+          <input 
+            type="email" 
+            placeholder="Correo electrónico" 
+            autocomplete="email"
+          />
         </div>
       </div>
 
       <div class="login-form-group">
-        <div class="login-input-icon">
-          <img src="/src/assets/images/icono-contrasena-verde.png" alt="Contraseña" />
-          <input type="password" placeholder="Contraseña" />
+        <div class="login-input-icon icon-password">
+          <input 
+            [type]="showPassword ? 'text' : 'password'" 
+            placeholder="Contraseña" 
+            autocomplete="current-password"
+          />
+          <button type="button" class="toggle-password" (click)="togglePasswordVisibility()"></button>
         </div>
       </div>
 
-      <div class="login-forgot-password">
+      <div class="login-forgot-password text-right w-full max-w-xs">
         <a href="#">¿Olvidaste tu contraseña?</a>
       </div>
 
-      <button type="submit" class="login-btn">INICIAR SESIÓN</button>
+      <button type="submit" class="login-btn w-full max-w-xs">INICIAR SESIÓN</button>
     </form>
 
-    <div class="login-register-link">
+    <div class="login-register-link mt-4">
       <span>¿No tienes cuenta?</span>
       <a routerLink="/register">Regístrate</a>
     </div>
   </div>
 </div>
 
+<!-- Footer se oculta en mobile vía SCSS -->
 <app-footer-conia></app-footer-conia>
-

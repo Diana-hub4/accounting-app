@@ -11,25 +11,20 @@ import { FooterConiaComponent } from '../../shared/components/footer-conia/foote
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
-  loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+export class LoginComponent {
+  showPassword = false;
+  isMobile = window.innerWidth <= 767;
 
-  ngOnInit(): void {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-    });
+  constructor(private router: Router) {}
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
   }
 
-  onSubmit() {
-    if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
-
-      this.router.navigate (['/dashboard']);
-    } else {
-      this.loginForm.markAllAsTouched();
-    }
+  login(event: Event) {
+    event.preventDefault();
+    this.router.navigate(['/dashboard/facturacion']);
   }
 }
+
