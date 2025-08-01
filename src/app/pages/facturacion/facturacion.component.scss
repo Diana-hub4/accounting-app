@@ -1,38 +1,57 @@
-.carga-flotante {
-  position: fixed;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fff;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  z-index: 10;
+/* Layout principal */
+.app-navbar {
+  height: 80px;
+  flex-shrink: 0;
+  width: 100%;
+  z-index: 20;
+  position: relative;
 }
 
-.mensaje-flotante {
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #064e3b;
-  color: #fff;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  font-weight: bold;
-  z-index: 11;
+.layout-conia {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
+  min-height: calc(100vh - 80px); // 80px = altura del navbar
+}
+
+.app-lateral-menu-conia {
+  width: 220px;
+  background: #ffffff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: #f8f8f8;
+  overflow-y: auto;
+}
+
+/* Estilos específicos de facturación */
+.facturacion-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .facturacion {
+  background: white;
+  border-radius: 8px;
   padding: 2rem;
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  overflow-y: auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 
   h1 {
-    color: #064e3b; 
+    color: #064e3b;
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
   }
@@ -47,7 +66,7 @@
     justify-content: center;
     align-items: flex-start;
     gap: 15rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
     flex-wrap: wrap;
     position: relative;
 
@@ -72,17 +91,39 @@
       cursor: pointer;
       width: auto;
       background: #064e3b;
+      transition: background 0.3s ease;
 
-      img {
+      &:hover {
+        background: darken(#064e3b, 10%);
+      }
+
+      span.icon-upload {
         width: 20px;
         height: 20px;
-        flex-shrink: 0;
+        display: inline-block;
+        background: url('../../../assets/images/UPLOAD\ ICON.png') no-repeat center;
+        background-size: contain;
+      }
+
+      span.icon-file-text {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        background: url('/src/assets/images/FILE TEXT ICON.png') no-repeat center;
+        background-size: contain;
       }
 
       span {
         white-space: nowrap;
       }
     }
+  }
+
+  .formatos-admitidos {
+    font-size: 0.85rem;
+    color: #064e3b;
+    margin-top: 0.25rem;
+    margin-bottom: 1.5rem;
   }
 
   table {
@@ -93,6 +134,7 @@
     z-index: 1;
     margin-top: 1rem;
     border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
     thead {
       background: #064e3b;
@@ -101,12 +143,20 @@
       top: 0;
     }
 
-    tbody tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
+    tbody tr {
+      transition: background-color 0.2s ease;
 
-    tbody tr:nth-child(odd) {
-      background-color: #ffffff;
+      &:hover {
+        background-color: #e6f7f2 !important;
+      }
+
+      &:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      &:nth-child(odd) {
+        background-color: #ffffff;
+      }
     }
 
     th, td {
@@ -117,12 +167,12 @@
     }
 
     .denegado {
-      color: red;
+      color: #e53e3e;
       font-weight: bold;
     }
 
     .pendiente {
-      color: blue;
+      color: #3182ce;
       font-weight: bold;
     }
 
@@ -130,35 +180,71 @@
       background: #064e3b;
       color: #fff;
       border: none;
-      padding: 0.25rem 0.75rem;
-      border-radius: 10px;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
       cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: darken(#064e3b, 10%);
+        transform: translateY(-1px);
+      }
     }
   }
 }
 
-
-.formatos-admitidos {
-  font-size: 0.85rem;
-  color: #064e3b;
-  margin-top: 0.25rem;
-  margin-bottom: 1.5rem;
+/* Componentes flotantes */
+.carga-flotante {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 100;
 }
 
+.mensaje-flotante {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #064e3b;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 101;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Paginación */
 .paginacion {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  padding: 1rem 0;
 
   button {
     background: none;
     border: 1px solid #ccc;
-    padding: 0.4rem 0.8rem;
+    padding: 0.5rem 0.9rem;
     border-radius: 6px;
     cursor: pointer;
     font-size: 0.85rem;
+    transition: all 0.2s ease;
+
+    &:hover:not(.activo) {
+      background: #f0f0f0;
+    }
   }
 
   .activo {
@@ -169,5 +255,63 @@
 
   span {
     color: #666;
+    padding: 0 0.5rem;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .facturacion .acciones {
+    gap: 8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-layout {
+    flex-direction: column;
+  }
+
+  app-lateral-menu-conia {
+    width: 100%;
+    height: auto;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .facturacion {
+    padding: 1.5rem;
+
+    .acciones {
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    table {
+      font-size: 0.9rem;
+
+      th, td {
+        padding: 0.6rem;
+      }
+    }
+  }
+
+  .paginacion {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .facturacion {
+    padding: 1rem;
+
+    table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
   }
 }

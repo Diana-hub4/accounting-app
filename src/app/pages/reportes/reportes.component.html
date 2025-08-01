@@ -1,67 +1,71 @@
-﻿<app-lateral-menu-conia></app-lateral-menu-conia>
+﻿<div class="layout-total">
+  <app-navbar></app-navbar>
 
-<div class="reportes">
-  <h2>Reportes</h2>
-  
-  <div class="search-bar">
-    <input type="text" placeholder="Buscar..." [(ngModel)]="busqueda">
-    <button>
-      <img src="assets/search-icon.svg" alt="Buscar">
-    </button>
-  </div>
+  <div class="layout-wrapper">
+    <app-lateral-menu-conia></app-lateral-menu-conia>
 
-  <div class="cliente-box" *ngFor="let cliente of clientes">
-    <div class="cliente-header" (click)="toggleCliente(cliente)">
-      <div class="cliente-info">
-        <strong>{{ cliente.nombre }}</strong>
-        <span>NIT: {{ cliente.nit }}</span>
+    <main class="reportes">
+      <h2>Reportes</h2>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar..." [(ngModel)]="busqueda" />
+        <button>
+          <span class="icon-search"></span>
+        </button>
       </div>
-      <button>
-        <img [src]="cliente.expandido ? 'assets/chevron-up.svg' : 'assets/chevron-down.svg'" alt="Expandir">
-      </button>
-    </div>
 
-    <div class="ultimo-reporte" *ngIf="!cliente.expandido">
-      Último reporte: {{ cliente.ultimoReporte }}
-    </div>
+      <div class="cliente-box" *ngFor="let cliente of clientes">
+        <div class="cliente-header" (click)="toggleCliente(cliente)">
+          <div class="cliente-info">
+            <strong>{{ cliente.nombre }}</strong>
+            <span>NIT: {{ cliente.nit }}</span>
+          </div>
+          <button>
+            <span [ngClass]="cliente.expandido ? 'icon-chevron-up' : 'icon-chevron-down'"></span>
+          </button>
+        </div>
 
-    <div class="cliente-documentos" *ngIf="cliente.expandido && cliente.documentos.length > 0">
-      <table>
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Tipo</th>
-            <th>Fecha</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let documento of cliente.documentos">
-            <td>{{ documento.nombre }}</td>
-            <td>{{ documento.tipo }}</td>
-            <td>{{ documento.fecha }}</td>
-            <td>
-              <button class="descargar">Descargar</button>
-              <button class="compartir">Compartir</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        <div class="ultimo-reporte" *ngIf="!cliente.expandido">
+          Último reporte: {{ cliente.ultimoReporte }}
+        </div>
 
-      <div class="acciones-globales">
-        <button class="descargar">Descargar todo</button>
-        <button class="compartir">Compartir todo</button>
+        <div class="cliente-documentos" *ngIf="cliente.expandido && cliente.documentos.length > 0">
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let documento of cliente.documentos">
+                <td>{{ documento.nombre }}</td>
+                <td>{{ documento.tipo }}</td>
+                <td>{{ documento.fecha }}</td>
+                <td>
+                  <button class="descargar">Descargar</button>
+                  <button class="compartir">Compartir</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="acciones-globales">
+            <button class="descargar">Descargar todo</button>
+            <button class="compartir">Compartir todo</button>
+          </div>
+        </div>
+
+        <div class="cliente-documentos" *ngIf="cliente.expandido && cliente.documentos.length === 0">
+          <p>No hay documentos disponibles para este cliente.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="cliente-documentos" *ngIf="cliente.expandido && cliente.documentos.length === 0">
-      <p>No hay documentos disponibles para este cliente.</p>
-    </div>
-  </div>
-
-  <div class="siguiente">
-    <button>Ver más resultados</button>
+      <div class="siguiente">
+        <button>Ver más resultados</button>
+      </div>
+    </main>
   </div>
 </div>
-
-<app-footer-conia></app-footer-conia>

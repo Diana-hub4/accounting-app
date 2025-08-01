@@ -1,56 +1,73 @@
-﻿<div class="layout-wrapper">
-  <app-lateral-menu-conia></app-lateral-menu-conia>
+﻿<div class="layout-total">
+  <app-navbar></app-navbar>
 
-  <main class="ajustes">
-    <h2>AJUSTES</h2>
-    <p>Administra y personaliza la configuración de tu entorno. Desde datos de perfil, parámetros tributarios y visuales, hasta preferencias de seguridad y usuarios.</p>
+  <div class="layout-wrapper">
+    <app-lateral-menu-conia></app-lateral-menu-conia>
 
-    <div class="ajustes-grid">
-      <div class="opcion"><img src="/src/assets/images/HOME ICON.png" alt="Empresa"> Información de la Empresa</div>
-      <div class="opcion toggle">
-        <img src="/src/assets/images/LOADER ICON.png" alt="Auto guardado">
-        Autoguardado
-        <label class="switch">
-          <input type="checkbox" checked>
-          <span class="slider"></span>
-        </label>
-      </div>
+    <main class="ajustes">
+      <h2>AJUSTES</h2>
+      <p>
+        Administra y personaliza la configuración de tu entorno. Desde datos de perfil,
+        parámetros tributarios y visuales, hasta preferencias de seguridad y usuarios.
+      </p>
 
-      <div class="opcion"><img src="/src/assets/images/TV ICON.png" alt="Visualización"> Preferencias de Visualización</div>
-      <div class="opcion toggle">
-        <img src="/src/assets/images/CALENDAR ICON.png" alt="Factura periódica">
-        Facturación Periódica
-        <div class="switch-button">
-          <button class="active">Week</button>
-          <button>Month</button>
+      <!-- Grid de opciones -->
+      <div class="ajustes-grid">
+        <div class="opcion">
+          <span class="icon-home"></span> Información de la Empresa
+        </div>
+
+        <div class="opcion toggle">
+          <span class="icon-loader"></span> Autoguardado
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="opcion">
+          <span class="icon-tv"></span> Preferencias de Visualización
+        </div>
+
+        <div class="opcion toggle">
+          <span class="icon-calendar"></span> Facturación Periódica
+          <div class="switch-button">
+            <button class="active">Week</button>
+            <button>Month</button>
+          </div>
+        </div>
+
+        <div class="opcion toggle">
+          <span class="icon-mail"></span> Notificaciones por Correo
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="opcion">
+          <span class="icon-trash"></span> Eliminar Cuenta
         </div>
       </div>
 
-      <div class="opcion toggle">
-        <img src="/src/assets/images/MAIL ICON.png" alt="Correo">
-        Notificaciones por Correo
-        <label class="switch">
-          <input type="checkbox" checked>
-          <span class="slider"></span>
-        </label>
+      <!-- Caja de información -->
+      <div class="info-box">
+        <h3><span class="icon-poligono"></span> Información de la Empresa</h3>
+        <p>
+          CONIA es una aplicación inteligente diseñada para transformar la forma en que los
+          contadores gestionan sus procesos financieros. Integrando tecnologías de vanguardia y
+          análisis inteligente de datos, CONIA ofrece una plataforma segura y amigable que se adapta
+          a las necesidades reales de profesionales contables en Latinoamérica.
+        </p>
+        <ul>
+          <li>✅ Generar y gestionar facturas electrónicas cumpliendo con la normativa de la DIAN.</li>
+          <li>✅ Organizar nóminas, documentos soporte y reportes detallados por cliente o empresa.</li>
+        </ul>
+        <p>
+          Nuestra misión es brindar a los contadores una herramienta intuitiva que les permita
+          concentrarse en lo importante: generar valor, cumplir con regulaciones y ofrecer un servicio impecable.
+        </p>
       </div>
-
-      <div class="opcion">
-        <img src="/src/assets/images/TRASH ICON.png" alt="Eliminar"> Eliminar Cuenta
-      </div>
-    </div>
-
-    <div class="info-box">
-      <h3><img src="/src/assets/images/POLIGONO ICON.png" alt="Info"> Información de la Empresa</h3>
-      <p>CONIA es una aplicación inteligente diseñada para transformar la forma en que los contadores gestionan sus procesos financieros. Integrando tecnologías de vanguardia y análisis inteligente de datos, CONIA ofrece una plataforma segura y amigable que se adapta a las necesidades reales de profesionales contables en Latinoamérica.</p>
-      <ul>
-        <li>✅ Generar y gestionar facturas electrónicas cumpliendo con la normativa de la DIAN.</li>
-        <li>✅ Organizar nóminas, documentos soporte y reportes detallados por cliente o empresa.</li>
-        <li>✅ Aplicar inteligencia artificial para agilizar tareas como OCR, clasificación de documentos y cálculos automáticos.</li>
-      </ul>
-      <p>Nuestra misión es brindar a los contadores una herramienta intuitiva que les permita concentrarse en lo importante: generar valor, cumplir con regulaciones y ofrecer un servicio impecable.</p>
-    </div>
-  </main>
+    </main>
+  </div>
 </div>
-
-<app-footer-conia></app-footer-conia>

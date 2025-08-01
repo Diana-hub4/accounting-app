@@ -1,77 +1,77 @@
-﻿<app-lateral-menu-conia></app-lateral-menu-conia>
+﻿<div class="layout-total">
+  <!-- Barra superior visible -->
+  <app-navbar class="navbar-fix"></app-navbar>
 
-<div class="layout-wrapper">
+  <div class="layout-wrapper">
+    <!-- Sidebar fija -->
+    <app-lateral-menu-conia></app-lateral-menu-conia>
 
-  <main class="documento-soporte">
-    <header>
-      <h1>DOCUMENTO SOPORTE</h1>
-      <p>
-        Aquí puedes registrar documentos soporte de operaciones con no obligados a facturar,
-        asegurando trazabilidad, validación estructurada y respaldo legal ante la DIAN.
-      </p>
-    </header>
+    <!-- Contenido principal -->
+    <main class="documento-soporte">
+      <header>
+        <h1>DOCUMENTO SOPORTE</h1>
+        <p>
+          Aquí puedes registrar documentos soporte de operaciones con no obligados a facturar,
+          asegurando trazabilidad, validación estructurada y respaldo legal ante la DIAN.
+        </p>
+      </header>
 
-    <div class="acciones">
-      <button class="btn cargar" (click)="mostrarCarga()">
-        <img src="/src/assets/images/UPLOAD ICON.png" alt="Subir" />
-        CARGAR DOCUMENTOS
-      </button>
-      <p class="formatos-admitidos">Aceptamos PDF, XML, JPG, PNG, DOCX</p>
+      <div class="acciones">
+        <button class="btn cargar" (click)="mostrarCarga()">
+          <span class="icon-upload"></span>
+          CARGAR DOCUMENTOS
+        </button>
+        <p class="formatos-admitidos">Aceptamos PDF, XML, JPG, PNG, DOCX</p>
 
-      <div class="carga-flotante" *ngIf="mostrarInput">
-        <input type="file" (change)="procesarArchivo()" />
+        <div class="carga-flotante" *ngIf="mostrarInput">
+          <input type="file" (change)="procesarArchivo()" />
+        </div>
+
+        <div class="mensaje-flotante" *ngIf="procesando">
+          <span *ngIf="!procesado">procesando archivo...</span>
+          <span *ngIf="procesado">✔️ Archivo procesado correctamente</span>
+        </div>
       </div>
 
-      <div class="mensaje-flotante" *ngIf="procesando">
-        <span *ngIf="!procesado">procesando archivo...</span>
-        <span *ngIf="procesado">✔️ Archivo procesado correctamente</span>
+      <table>
+        <thead>
+          <tr>
+            <th>Documento</th>
+            <th>Fecha</th>
+            <th>Proveedor</th>
+            <th>Estado</th>
+            <th>Precio</th>
+            <th>Observaciones</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let doc of documentos">
+            <td>{{ doc.id }}</td>
+            <td>{{ doc.fecha }}</td>
+            <td>{{ doc.proveedor }}</td>
+            <td [ngClass]="{ 'denegado': doc.estado === 'Rechazado', 'pendiente': doc.estado === 'En Proceso' }">
+              {{ doc.estado }}
+            </td>
+            <td>{{ doc.precio }}</td>
+            <td>{{ doc.observaciones }}</td>
+            <td>
+              <button class="editar" [routerLink]="['/dashboard/documento-soporte/editar', doc.id]">
+                Editar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="paginacion">
+        <button>&laquo; Anterior</button>
+        <button class="activo">1</button>
+        <button>2</button>
+        <span>...</span>
+        <button>6</button>
+        <button>Siguiente &raquo;</button>
       </div>
-    </div> <!-- cierre de .acciones -->
-
-    <table>
-      <thead>
-        <tr>
-          <th>Documento</th>
-          <th>Fecha</th>
-          <th>Proveedor</th>
-          <th>Estado</th>
-          <th>Precio</th>
-          <th>Observaciones</th>
-          <th>Acción</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let doc of documentos">
-          <td>{{ doc.id }}</td>
-          <td>{{ doc.fecha }}</td>
-          <td>{{ doc.proveedor }}</td>
-          <td [ngClass]="{
-                'denegado': doc.estado === 'Rechazado',
-                'pendiente': doc.estado === 'En Proceso'
-              }">
-            {{ doc.estado }}
-          </td>
-          <td>{{ doc.precio }}</td>
-          <td>{{ doc.observaciones }}</td>
-          <td>
-            <button class="editar" [routerLink]="['/dashboard/documento-soporte/editar', doc.id]">
-              Editar
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </main>
-
-  <div class="paginacion">
-    <button>&laquo; Anterior</button>
-    <button class="activo">1</button>
-    <button>2</button>
-    <span>...</span>
-    <button>6</button>
-    <button>Siguiente &raquo;</button>
+    </main>
   </div>
-
 </div>
-
-<app-footer-conia></app-footer-conia>

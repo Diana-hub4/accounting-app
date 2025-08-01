@@ -1,0 +1,70 @@
+@use "sass:color";
+
+.logo-navbar {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 1px;
+  color: transparent;
+  background: linear-gradient(to bottom, #b1e3c4, #43c59e, #064e3b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 5s ease infinite;
+  padding-left: 1rem;
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+  }
+}
+
+.logo-navbar-box {
+  font-size: 1.2rem;
+  font-weight: 800;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 1px;
+  padding: 0.2rem 0.8rem;
+  background-color: white;
+  border: 2px solid #b1e3c4;
+  border-radius: 8px;
+  color: #064e3b;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-conia {
+  height: 40px;
+  width: 100%;
+  background: #064e3b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  z-index: 100;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.25);
+  box-sizing: border-box;
+
+  &.static-navbar {
+    position: static;
+  }
+
+  .navbar-left {
+    flex-grow: 1;
+  }
+
+  .btn-salir {
+    background: transparent url('/src/assets/images/icono-salir.png') no-repeat center;
+    background-size: 20px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    margin-left: auto;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

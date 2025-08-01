@@ -2,6 +2,7 @@
 import { CommonModule } from '@angular/common';
 import { LateralMenuConiaComponent } from '../../shared/components/lateral-menu-conia/lateral-menu-conia.component';
 import { FooterConiaComponent } from '../../shared/components/footer-conia/footer-conia.component';
+import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
 
 @Component({
   selector: 'app-ajustes',
@@ -9,7 +10,8 @@ import { FooterConiaComponent } from '../../shared/components/footer-conia/foote
   imports: [
     CommonModule,
     LateralMenuConiaComponent,
-    FooterConiaComponent
+    FooterConiaComponent, 
+    NavbarComponent
   ],
   templateUrl: './ajustes.component.html',
   styleUrls: ['./ajustes.component.scss']

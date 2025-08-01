@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { LateralMenuConiaComponent } from '../../shared/components/lateral-menu-conia/lateral-menu-conia.component';
 import { FooterConiaComponent } from '../../shared/components/footer-conia/footer-conia.component';
+import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
 
 @Component({
   selector: 'app-edicion-facturacion',
@@ -10,7 +11,8 @@ import { FooterConiaComponent } from '../../shared/components/footer-conia/foote
   imports: [
     FormsModule,
     LateralMenuConiaComponent,
-    FooterConiaComponent
+    FooterConiaComponent, 
+    NavbarComponent
   ],
   templateUrl: './edicion-facturacion.component.html',
   styleUrls: ['./edicion-facturacion.component.scss']

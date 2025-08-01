@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LateralMenuConiaComponent } from '../../shared/components/lateral-menu-conia/lateral-menu-conia.component';
 import { FooterConiaComponent } from '../../shared/components/footer-conia/footer-conia.component';
+import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
 
 @Component({
   selector: 'app-edicion-clientes',
@@ -10,7 +11,8 @@ import { FooterConiaComponent } from '../../shared/components/footer-conia/foote
     CommonModule,
     FormsModule,
     FooterConiaComponent,
-    LateralMenuConiaComponent
+    LateralMenuConiaComponent,
+    NavbarComponent
   ],
   templateUrl: './edicion-clientes.component.html',
   styleUrls: ['./edicion-clientes.component.scss']

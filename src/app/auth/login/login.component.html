@@ -1,75 +1,76 @@
-<div class="container-login flex flex-col md:flex-row min-h-screen overflow-x-hidden">
-  <!-- Panel Izquierdo -->
-  <div class="sidebar-conia hidden md:flex w-full md:w-1/2">
+<div class="container-login">
+  <!-- Sidebar con gradiente -->
+  <div class="sidebar-conia">
     <div class="logo">
       <div class="logo-img"></div>
-      <div class="conia-text">CONIA</div>
+      <h1 class="conia-text">CONIA</h1>
     </div>
     <p>
-      Optimiza la gestión contable con ConIA, transforma los datos en decisiones estratégicas desde un solo lugar, sin perder el control.
+      Optimiza la gestión contable con ConIA, transforma los datos en decisiones
+      estratégicas desde un solo lugar, sin perder el control.
     </p>
   </div>
 
-  <!-- Panel Derecho -->
-  <div class="login-right w-full">
+  <!-- Contenido principal -->
+  <div class="login-right">
+    <div class="login-content-wrapper">
+      <h1 class="login-title">INICIAR SESIÓN</h1>
 
-    <!-- Título solo desktop -->
-    <h2 class="login-title">INICIAR SESIÓN</h2>
+      <!-- Botón Google -->
+      <button class="login-google-btn">
+        <span class="icon-google"></span>
+        Continuar con Google
+      </button>
 
-    <!-- Versión Móvil Título y Logo -->
-    <div class="login-title-mobile">
-      <div class="brand">
-        <div class="logo-icon"></div>
-        <div class="conia-text">CONIA</div>
+      <!-- Divisor -->
+      <div class="login-divider">
+        <span>o</span>
       </div>
-      <p class="iniciar-solo-mobile">INICIAR SESIÓN</p>
-    </div>
 
-    <!-- Botón Google -->
-    <div class="login-google-btn w-full max-w-xs">
-      <div class="icon-google"></div>
-      <span>Inicia sesión con tu cuenta de Google</span>
-    </div>
-
-    <!-- Divider -->
-    <div class="login-divider">O</div>
-
-    <!-- FORMULARIO -->
-    <form class="login-form w-full max-w-xs" (submit)="login($event)">
-      <div class="login-form-group">
-        <div class="login-input-icon icon-email">
-          <input 
-            type="email" 
-            placeholder="Correo electrónico" 
+      <!-- Formulario -->
+      <form class="login-form">
+        <!-- Input correo -->
+        <div class="login-form-group icon-email">
+          <input
+            type="email"
+            placeholder="Correo electrónico"
+            required
             autocomplete="email"
           />
         </div>
-      </div>
 
-      <div class="login-form-group">
-        <div class="login-input-icon icon-password">
-          <input 
-            [type]="showPassword ? 'text' : 'password'" 
-            placeholder="Contraseña" 
+        <!-- Input contraseña -->
+        <div class="login-form-group icon-password">
+          <input
+            type="password"
+            placeholder="Contraseña"
+            required
             autocomplete="current-password"
           />
-          <button type="button" class="toggle-password" (click)="togglePasswordVisibility()"></button>
         </div>
+
+        <!-- Recuérdame y ¿Olvidaste tu contraseña? -->
+        <div class="login-options-row">
+          <label class="checkbox-container">
+            <input type="checkbox" id="remember" />
+            <span></span>
+            Recuérdame
+          </label>
+          <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <!-- Botón Iniciar sesión -->
+        <button type="submit" class="login-btn">INICIAR SESIÓN</button>
+      </form>
+
+      <!-- Registro -->
+      <div class="login-register-link">
+        <span>¿No tienes una cuenta?</span>
+        <a href="#">Regístrate</a>
       </div>
-
-      <div class="login-forgot-password text-right w-full max-w-xs">
-        <a href="#">¿Olvidaste tu contraseña?</a>
-      </div>
-
-      <button type="submit" class="login-btn w-full max-w-xs">INICIAR SESIÓN</button>
-    </form>
-
-    <div class="login-register-link mt-4">
-      <span>¿No tienes cuenta?</span>
-      <a routerLink="/register">Regístrate</a>
     </div>
   </div>
 </div>
 
-<!-- Footer se oculta en mobile vía SCSS -->
+<!-- Footer al fondo -->
 <app-footer-conia></app-footer-conia>

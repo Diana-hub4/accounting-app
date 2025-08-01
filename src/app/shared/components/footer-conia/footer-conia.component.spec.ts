@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AjustesComponent } from './ajustes.component';
+import { FooterConiaComponent } from './footer-conia.component';
 
-describe('AjustesComponent', () => {
-  let component: AjustesComponent;
-  let fixture: ComponentFixture<AjustesComponent>;
+describe('FooterConiaComponent', () => {
+  let component: FooterConiaComponent;
+  let fixture: ComponentFixture<FooterConiaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AjustesComponent ]
+      declarations: [ FooterConiaComponent ]
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AjustesComponent);
+    fixture = TestBed.createComponent(FooterConiaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

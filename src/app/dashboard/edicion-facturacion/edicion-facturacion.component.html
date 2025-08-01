@@ -1,67 +1,71 @@
-﻿<div class="layout-wrapper">
-  <app-lateral-menu-conia></app-lateral-menu-conia>
+﻿<div class="layout-total">
+  <app-navbar></app-navbar>
 
-  <section class="edicion-facturacion">
-    <h1>EDICIÓN DE FACTURAS</h1>
+  <div class="layout-wrapper">
+    <app-lateral-menu-conia></app-lateral-menu-conia>
 
-    <form>
-      <div class="form-row">
-        <label>Emisor</label>
-        <input type="text" [(ngModel)]="factura.emisor" name="emisor" readonly>
-        <button type="button" class="editar-btn">
-          <img src="/src/assets/images/EDIT ICON.png" alt="Editar" />
-        </button>
-      </div>
+    <div class="contenedor">
+      <section class="edicion-facturacion">
+        <h1>EDICIÓN DE FACTURAS</h1>
 
-      <div class="form-row">
-        <input type="text" [(ngModel)]="factura.nitEmisor" name="nitEmisor" readonly>
-        <input type="email" [(ngModel)]="factura.emailEmisor" name="emailEmisor" readonly>
-      </div>
+        <form>
+          <div class="form-row">
+            <label>Emisor</label>
+            <input type="text" [(ngModel)]="factura.emisor" name="emisor" readonly />
+            <button type="button" class="editar-btn">
+              <span class="icon-edit"></span>
+            </button>
+          </div>
 
-      <div class="form-row">
-        <label>Señores</label>
-        <input type="text" [(ngModel)]="factura.receptor" name="receptor" readonly>
-      </div>
+          <div class="form-row">
+            <input type="text" [(ngModel)]="factura.nitEmisor" name="nitEmisor" readonly />
+            <input type="email" [(ngModel)]="factura.emailEmisor" name="emailEmisor" readonly />
+          </div>
 
-      <div class="form-row">
-        <input type="text" [(ngModel)]="factura.nitReceptor" name="nitReceptor" readonly>
-        <input type="text" [(ngModel)]="factura.telefono" name="telefono" readonly>
-        <input type="text" [(ngModel)]="factura.ciudad" name="ciudad" readonly>
-      </div>
+          <div class="form-row">
+            <label>Señores</label>
+            <input type="text" [(ngModel)]="factura.receptor" name="receptor" readonly />
+          </div>
 
-      <div class="form-row">
-        <label>Fecha de Emisión</label>
-        <input type="date" [(ngModel)]="factura.fechaEmision" name="fechaEmision">
-        <label>Número de Factura</label>
-        <input type="text" [(ngModel)]="factura.numeroFactura" name="numeroFactura" readonly>
-      </div>
+          <div class="form-row">
+            <input type="text" [(ngModel)]="factura.nitReceptor" name="nitReceptor" readonly />
+            <input type="text" [(ngModel)]="factura.telefono" name="telefono" readonly />
+            <input type="text" [(ngModel)]="factura.ciudad" name="ciudad" readonly />
+          </div>
 
-      <div class="form-row">
-        <label>Descripción</label>
-        <textarea [(ngModel)]="factura.descripcion" name="descripcion" rows="3" readonly></textarea>
-        <input type="number" [(ngModel)]="factura.cantidad" name="cantidad">
-        <input type="text" [(ngModel)]="factura.total" name="total" readonly>
-      </div>
+          <div class="form-row">
+            <label>Fecha de Emisión</label>
+            <input type="date" [(ngModel)]="factura.fechaEmision" name="fechaEmision" />
+            <label>Número de Factura</label>
+            <input type="text" [(ngModel)]="factura.numeroFactura" name="numeroFactura" readonly />
+          </div>
 
-      <div class="form-row">
-        <button type="button" class="add-item">
-          <img src="/src/assets/images/icono-cuadro-suma.png" alt="Añadir" /> Añadir Item
-        </button>
-      </div>
+          <div class="form-row">
+            <label>Descripción</label>
+            <textarea [(ngModel)]="factura.descripcion" name="descripcion" rows="3" readonly></textarea>
+            <input type="number" [(ngModel)]="factura.cantidad" name="cantidad" />
+            <input type="text" [(ngModel)]="factura.total" name="total" readonly />
+          </div>
 
-      <div class="totales">
-        <div>Subtotal: {{ factura.subtotal }}</div>
-        <div>IVA: {{ factura.iva }}</div>
-        <div>Total: {{ factura.totalGeneral }}</div>
-      </div>
+          <div class="form-row">
+            <button type="button" class="add-item">
+              <span class="icon-plus"></span> Añadir Item
+            </button>
+          </div>
 
-      <div class="acciones">
-        <button type="submit" class="guardar">GUARDAR CAMBIOS</button>
-        <button type="reset" class="restablecer">REESTABLECER</button>
-        <button type="button" class="cancelar" (click)="cancelar()">CANCELAR</button>
-      </div>
-    </form>
-  </section>
+          <div class="totales">
+            <div>Subtotal: {{ factura.subtotal }}</div>
+            <div>IVA: {{ factura.iva }}</div>
+            <div>Total: {{ factura.totalGeneral }}</div>
+          </div>
 
-  <app-footer-conia></app-footer-conia>
+          <div class="acciones">
+            <button type="submit" class="guardar">GUARDAR CAMBIOS</button>
+            <button type="reset" class="restablecer">REESTABLECER</button>
+            <button type="button" class="cancelar" (click)="cancelar()">CANCELAR</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
 </div>

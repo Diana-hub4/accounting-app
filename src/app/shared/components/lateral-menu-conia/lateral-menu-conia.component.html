@@ -1,20 +1,26 @@
-<div class="layout-conia">
-  <div class="topbar-conia">
-    <div class="logo-conia"></div>
-    <button class="logout-btn" (click)="volverLogin()"></button>
+<aside class="sidebar-conia">
+
+  <!-- AVATAR Y NOMBRE -->
+  <div class="admin-block">
+    <div class="avatar-conia"></div>
+    <span class="admin-label">Admin</span>
   </div>
 
-  <div class="main-body">
-    <div class="sidebar-conia">
-      <div class="avatar-conia"></div>
-      <div class="menu-buttons">
-        <button title="Documentos"></button>
-        <button title="Facturas"></button>
-      </div>
-    </div>
+  <!-- MENÚ -->
+  <nav class="nav-links">
+    <button (click)="navigate('/documentos')">
+      <span class="menu-icon icon-docs"></span>
+      <span class="menu-text">Documentos Soporte</span>
+    </button>
 
-    <div class="main-content">
-      <ng-content></ng-content> <!-- Aquí se cargará la vista de facturación -->
-    </div>
-  </div>
-</div>
+    <button (click)="navigate('/facturacion')">
+      <span class="menu-icon icon-facturas"></span>
+      <span class="menu-text">Facturación</span>
+    </button>
+
+    <button (click)="navigate('/ajustes')">
+      <span class="menu-icon icon-ajustes"></span>
+      <span class="menu-text">Ajustes</span>
+    </button>
+  </nav>
+</aside>

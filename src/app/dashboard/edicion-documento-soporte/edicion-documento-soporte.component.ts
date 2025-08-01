@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LateralMenuConiaComponent } from '../../shared/components/lateral-menu-conia/lateral-menu-conia.component';
 import { FooterConiaComponent } from '../../shared/components/footer-conia/footer-conia.component';
+import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
 import template from './edicion-documento-soporte.component.html?raw';
 import styles from './edicion-documento-soporte.component.scss?inline';
 
@@ -15,7 +16,8 @@ import styles from './edicion-documento-soporte.component.scss?inline';
     FormsModule, 
     RouterModule,
     LateralMenuConiaComponent,
-    FooterConiaComponent
+    FooterConiaComponent,
+    NavbarComponent
   ],
   template,
   styles: [styles]

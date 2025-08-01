@@ -1,17 +1,13 @@
 
-@use '../../../styles/sidebar-conia.scss' as *;
+@use '../../../styles/sidebar-conia.component.scss' as *;
 
 /* ---------- GLOBAL RESET ---------- */
-* {
+.register-container *,
+.register-container *::before,
+.register-container *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
 }
 
 /* ---------- CONTAINER ---------- */

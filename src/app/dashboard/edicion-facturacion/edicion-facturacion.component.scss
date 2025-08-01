@@ -1,7 +1,51 @@
+.layout-total {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+app-navbar {
+  flex-shrink: 0;
+  height: 40px;
+  z-index: 10;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+.layout-wrapper {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+app-lateral-menu-conia {
+  width: 220px;
+  flex-shrink: 0;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.contenedor {
+  flex: 1;
+  overflow-y: auto;
+  height: calc(100vh - 40px); // espacio restante debajo del navbar
+  box-sizing: border-box;
+}
+
+// Ocultar scroll
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+
 .edicion-facturacion {
   padding: 2rem;
-  margin-left: 80px;
   font-family: 'Segoe UI', sans-serif;
+  width: 100%;
+  box-sizing: border-box;
 
   h1 {
     color: #064e3b;
@@ -25,7 +69,8 @@
         color: #064e3b;
       }
 
-      input, textarea {
+      input,
+      textarea {
         flex: 1;
         padding: 0.5rem;
         border: 1px solid #ccc;
@@ -33,13 +78,38 @@
         width: 100%;
       }
 
-      .editar-btn, .add-item {
+      .editar-btn {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+
+        .icon-edit {
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+          background: url('/src/assets/images/EDIT ICON.png') no-repeat center;
+          background-size: contain;
+        }
+      }
+
+      .add-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
         background: #064e3b;
         color: white;
         border: none;
-        padding: 0.25rem 0.5rem;
+        padding: 0.25rem 0.75rem;
         border-radius: 4px;
         cursor: pointer;
+
+        .icon-plus {
+          width: 16px;
+          height: 16px;
+          background: url('/src/assets/images/icono-cuadro-suma.png') no-repeat center;
+          background-size: contain;
+          display: inline-block;
+        }
       }
     }
 
@@ -71,7 +141,8 @@
         cursor: pointer;
       }
 
-      .restablecer, .cancelar {
+      .restablecer,
+      .cancelar {
         background: transparent;
         border: 1px solid #064e3b;
         color: #064e3b;
@@ -83,3 +154,39 @@
   }
 }
 
+@media (max-width: 768px) {
+  .edicion-facturacion {
+    padding: 1rem;
+
+    form {
+      .form-row {
+        flex-direction: column;
+        align-items: stretch;
+
+        label {
+          width: 100%;
+        }
+
+        input,
+        textarea {
+          width: 100%;
+        }
+
+        .add-item {
+          justify-content: center;
+        }
+      }
+
+      .acciones {
+        flex-direction: column;
+        button {
+          width: 100%;
+        }
+      }
+
+      .totales {
+        flex-direction: column;
+      }
+    }
+  }
+}
